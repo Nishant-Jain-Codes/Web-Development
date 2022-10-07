@@ -1,34 +1,72 @@
 body{
     margin: 0;
+    font-family: sans-serif;
+    font-size: 30px;
 }
 /*==========BODY HEADER=============*/
 #body-header {
-    height: 65vh;
+    height: 60vh;
     opacity: 0.9;
     background-image: url(photos/header_background.avif);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    padding-top: 1.2rem;
 }
 /*=============NAVIGATION BAR============*/
 .horizontal-list{
     list-style: none;
     padding-left: 0px;
+    margin: 0px;
     text-align: center;
 }
 .horizontal-list li{
     display: inline-block;
     margin: 0px 8px 8px 0px;
+    margin-left: 3%;
+    font-weight: 100;
+    font-size: 1.6rem;
 }
 .horizontal-list li a{
     color: white;
     text-decoration: none;
 }
-.horizontal-list li a:hover{
+.nav-menu li a{
+    transition: color 0.5s,border-bottom 4s ;
+}
+.nav-menu a:hover{
     color: rgba(245, 245, 245, 0.843);
     border-bottom: 1px solid white;
-    transition: color 0.5s;
 }
+
 .text-center{
     text-align: center;
+}
+/*============NAME and SOCIAL===================*/
+#name-social-container{
+    margin-top: 22vh;
+}
+#my-name{
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.social-icons li a img{
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+    font-size: 1rem;
+    border-radius: 25%;
+    box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.599) ;
+    background-color: rgba(255, 255, 255, 0.599);
+}
+.social-icons li a img:hover{
+    height: 30px;
+    width: 30px;
+    box-shadow: 0px 0px 8px 4px white ;
+    background-color: white;
+    border-radius: 50%;
+    transition: background-color 0.2s,box-shadow 0.3s , redious 0.4s;
 }
