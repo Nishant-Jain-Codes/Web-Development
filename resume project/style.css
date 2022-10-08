@@ -119,6 +119,9 @@ body{
     transition: opacity 0.2s;
 }
 /*=========for all sections==========*/
+.capital-text{
+    text-transform: uppercase;
+}
 section{
     width: 100%;
     display: flex;
@@ -135,6 +138,11 @@ section:nth-child(2n){
     width: auto;
     padding: 20px 10px 10px;
     font-weight: 400;
+}
+.section-heading:hover{
+    font-weight: 700;
+    opacity: 0.7;
+    transition: font-weight 0.5s,opacity 0.3s;
 }
 .section-heading span{
     font-size: 40px;
@@ -179,8 +187,8 @@ section:nth-child(2n){
     width: 20%;
     height: inherit;
 }
-.one-percent{
-    width: 1%;
+.zero-percent{
+    width: 0%;
     height: inherit;
 }
 /*===========SKILLS==================*/
@@ -207,7 +215,9 @@ section:nth-child(2n){
     font-size: 85%;
     
 }
-
+#skills{
+    padding-bottom:5%;
+}
 /*=============EXPERIENCE================*/
 /*============EDUCATION=================*/
 /*==============PORTFOLIO===============*/
