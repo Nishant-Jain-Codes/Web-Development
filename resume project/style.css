@@ -94,6 +94,7 @@ body{
     width: 103%;
     border-radius: 55%;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
+    transition: height 0.15s,width 0.15s,box-shadow 0.2s;
 }
 #about-me{
     margin: auto;
@@ -107,4 +108,13 @@ body{
     font-size: 1.7rem;
     color: gray;
     opacity: 0.8;
+}
+#about-me p:hover{
+
+    text-align: justify;
+    word-spacing: normal;
+    font-size: 1.7rem;
+    color: rgb(104, 98, 98);
+    opacity: 1;
+    transition: opacity 0.2s;
 }
