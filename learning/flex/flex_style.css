@@ -1,0 +1,38 @@
+#container{
+    height: 500px;
+    width: 500px;
+    background-color: brown;
+    display: flex;
+    flex-direction:row;
+    /* flex-wrap:wrap; */
+    align-items:  center;
+    justify-content: center;
+}
+#container div{
+    height: 100px;
+    width: 100px;
+    max-width: 200px;
+    max-height: 200px;
+}
+#div1{
+    background-color: bisque;
+    /* flex-grow: 1; */
+    margin: 10px;
+}
+#div2{
+    background-color: rgb(196, 255, 204);
+    /* flex-grow: 1; */
+    margin: 20px;
+}
+#div3{
+    background-color: rgb(255, 196, 197);
+    /* flex-grow: 1; */
+    margin: 30px;
+}
+
+/* #div4{
+    background-color: rgb(210, 196, 255);
+}
+#div5{
+    background-color: rgb(98, 130, 23);
+} */
