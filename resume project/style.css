@@ -118,8 +118,98 @@ body{
     opacity: 1;
     transition: opacity 0.2s;
 }
+/*=========for all sections==========*/
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section:nth-child(2n+1){
+    background-color: white;
+}
+section:nth-child(2n){
+    background-color: rgba(210, 207, 207, 0.377);
+}
+.section-heading{
+    width: auto;
+    padding: 20px 10px 10px;
+    font-weight: 400;
+}
+.section-heading span{
+    font-size: 40px;
+    color: gray;
+    display: inline-block;
+    padding-top: 10px;
+    margin-right: 0.5rem;
+}
+/*========color classes==========*/
+.bg-blue{
+    background-color: blue;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-orange{
+    background-color: orange;
+}
+.bg-yellow{
+    background-color: rgb(224, 224, 8);
+}
+.bg-green{
+    background-color: green;
+}
+.bg-pink{
+    background-color: pink;
+}
+/*=========percentage classes================*/
+.ninety-percent{
+    width: 90%;
+    height: inherit;
+}
+.eighty-five-percent{
+    width: 85%;
+    height: inherit;
+}
+.thirty-percent{
+    width: 30%;
+    height: inherit;
+}
+.twenty-percent{
+    width: 20%;
+    height: inherit;
+}
+.one-percent{
+    width: 1%;
+    height: inherit;
+}
 /*===========SKILLS==================*/
+#skill-display{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.skill-progress{
+    width: 9rem;
+    height: 2rem;
+    background-color: lightgrey;
+    border-radius: 0.8rem;
+    box-shadow: 0px 0px 8px 2px rgba(210, 207, 207,1);
+    margin: 10px;
+}
+.skill-progress>div{
+    border-radius: 20px 0px 0px 20px;
+}
+.skill-name span{
+    color:white;
+    margin-left: 10px;
+    font-size: 85%;
+    
+}
+
 /*=============EXPERIENCE================*/
 /*============EDUCATION=================*/
 /*==============PORTFOLIO===============*/
+
 /*=============CONTACTS================*/
