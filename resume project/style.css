@@ -170,6 +170,9 @@ section:nth-child(2n){
 .bg-pink{
     background-color: pink;
 }
+.bg-brown{
+    background-color: rgba(137, 31, 31, 0.896);
+}
 /*=========percentage classes================*/
 .ninety-percent{
     width: 90%;
@@ -177,6 +180,10 @@ section:nth-child(2n){
 }
 .eighty-five-percent{
     width: 85%;
+    height: inherit;
+}
+.eighty-percent{
+    width: 80%;
     height: inherit;
 }
 .thirty-percent{
