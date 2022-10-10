@@ -226,6 +226,59 @@ section:nth-child(2n){
 #skills{
     padding-bottom:5%;
 }
+/* ==================Time line============== */
+.timeline{
+    position: relative;
+    width: 75%;
+    border: 2px solid black;
+}
+.timeline-box{
+    position: relative;
+    width: 40%;
+    min-height: 150px;
+    left: 5%;
+    margin: 5px;
+    border: 2px solid black;
+
+}
+.timeline-box::after{
+    content: '';
+    position: absolute;
+    top: 30%;
+    right:-12.3%;
+    border-radius: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: red;
+}
+.timeline-box:nth-child(2n)::after{
+    content: '';
+    position: absolute;
+    top: 30%;
+    left:-11%;
+    border-radius: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: red;
+}
+.timeline-box:nth-child(2n)
+{
+    left:53%;
+}
+.timeline-divider{
+    position: absolute;
+    height: 75%;
+    width: 0;
+    border: 3px dashed rgba(210, 207, 207,1);
+    top: 10%;
+    left: 50%;
+}
+.timeline-traveller{
+    position: sticky;
+    top: 0%;
+    color: rgb(78, 83, 83);
+    transform: rotate(90deg);
+}
 /*=============EXPERIENCE================*/
 /*============EDUCATION=================*/
 /*==============PORTFOLIO===============*/
