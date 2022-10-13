@@ -199,6 +199,11 @@ section:nth-child(2n){
     width: 0%;
     height: inherit;
 }
+/* ==============margin classes=================== */
+.m0 {
+    margin: 0;
+}
+
 /*===========SKILLS==================*/
 #skill-display{
     width: 70%;
@@ -226,11 +231,10 @@ section:nth-child(2n){
 #skills{
     padding-bottom:5%;
 }
-/* ==================Time line============== */
+/* =========Time line,EXPERIENCE,EDUCATION=============== */
 .timeline{
     position: relative;
     width: 75%;
-    border: 2px solid black;
 }
 .timeline-box{
     position: relative;
@@ -238,14 +242,18 @@ section:nth-child(2n){
     min-height: 150px;
     left: 5%;
     margin: 5px;
-    border: 2px solid black;
+    text-align: right;
+    text-transform: capitalize;
 
+}
+.timeline-box:hover{
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.107);
+    border-radius: 3%;
 }
 .timeline-box::after{
     content: '';
     position: absolute;
     top: 35%;
-    
     border-radius: 50%;
     width: 0.5rem;
     height: 0.5rem;
@@ -279,8 +287,39 @@ section:nth-child(2n){
     transform: rotate(90deg);
     z-index: 2;
 }
-/*=============EXPERIENCE================*/
-/*============EDUCATION=================*/
+.timeline-container{
+    padding: 8px;
+}
+.timeline-logo{
+    position: absolute;
+    width: 50px;
+    overflow: hidden;
+}
+.timeline-logo >img{
+    width: 100%;
+}
+.timeline-designation{
+    font-size: 1.5rem;
+    color: chocolate;
+}
+.timeline-name{
+    margin: 5px 0px 0px;
+    color: orange;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.timeline-duration{
+    font-weight: 100;
+    color: grey;
+    font-size: 1rem;
+}
+.timeline-about{
+    font-size: 14px;
+    padding: 2px;
+    color: rgba(128, 128, 128, 0.791);
+    line-height: 20px;
+    text-align: justify;
+}
 /*==============PORTFOLIO===============*/
 #portfolio-display{
     width:70%;
