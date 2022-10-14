@@ -1,0 +1,30 @@
+
+.box-div{
+    width: 32%;
+    height: 300px;
+    margin: 0.5%;
+    display: inline-block;
+    
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+#div1{
+    background-color: #ff8989;
+}
+#div2{
+    background-color: #88f7ce;
+}
+#div3{
+    background-color: #e29df2;
+}
+@media only screen and (max-width:600px)
+{
+    .box-div{
+        display: block;
+        width: 100%;
+        margin: 0%;
+    }
+}
