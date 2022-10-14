@@ -320,7 +320,7 @@ section:nth-child(2n){
 /*==============PORTFOLIO===============*/
 #portfolio-display{
     box-sizing: border-box;
-    width:70%;
+    width:80%;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -409,6 +409,9 @@ section:nth-child(2n){
         height: 9rem;
         width: 9rem;
     }
+    #about-me{
+        width: 85%;
+    }
     #about-me p{
         font-size:1.1rem;
     }
@@ -433,9 +436,15 @@ section:nth-child(2n){
     .timeline-name,.timeline-duration{
         font-size: 0.9rem;
     }
+    #portfolio-display{
+        /* width: 90%; */
+        /* padding: 0 20px;
+        margin-bottom: 15px; */
+    }
     .project-image-container {
-        height: 200px;
-        width: 200px;
+        height: 220px;
+        width: 220px;
+        margin: 15px;
     }
     #contact-info{
         font-size: 60%;
