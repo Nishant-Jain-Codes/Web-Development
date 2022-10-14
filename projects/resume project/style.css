@@ -396,18 +396,18 @@ section:nth-child(2n){
 {
     
     #name-social-container{
-        margin-top: 10vh;
+        margin-top: 18vh;
     }
     .horizontal-list li{
         font-size: 1.2rem;
     }
     #my-name{
-        font-size:1.5rem;
+        font-size:2rem;
         margin-bottom: 1rem;
     }
     #my-image{
-        height: 7rem;
-        width: 7rem;
+        height: 9rem;
+        width: 9rem;
     }
     #about-me p{
         font-size:1.1rem;
