@@ -111,9 +111,6 @@ body{
 }
 #about-me p:hover{
 
-    text-align: justify;
-    word-spacing: normal;
-    font-size: 1.7rem;
     color: rgb(104, 98, 98);
     opacity: 1;
     transition: opacity 0.2s;
@@ -146,7 +143,7 @@ section:nth-child(2n){
     transition: font-weight 0.5s,opacity 0.3s;
 }
 .section-heading span{
-    font-size: 40px;
+    font-size: 2.5rem;
     color: gray;
     display: inline-block;
     padding-top: 10px;
@@ -367,6 +364,7 @@ section:nth-child(2n){
 /*=============CONTACTS================*/
 #contacts{
     background: linear-gradient(to right top,yellow,orange);
+    
 }
 #contact-display{
     width: 70%;
@@ -375,19 +373,77 @@ section:nth-child(2n){
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 10px;
+    align-items: center;
     
 }
 #contact-display>div{
+    min-width: 300px;
     width:50%;
 }
 #contact-form input{
-    width: 85%;
+    width: 80%;
     padding: 10px;
-    margin: 15px;
+    margin: 20px;
     box-sizing:border-box;
     border:0px;
     border-bottom:2px solid white;
 }
 #contact-display .social-links{
     margin: auto;
+}
+/* =========media queries============== */
+@media only screen and ( max-width:650px)
+{
+    
+    #name-social-container{
+        margin-top: 10vh;
+    }
+    .horizontal-list li{
+        font-size: 1.2rem;
+    }
+    #my-name{
+        font-size:1.5rem;
+        margin-bottom: 1rem;
+    }
+    #my-image{
+        height: 7rem;
+        width: 7rem;
+    }
+    #about-me p{
+        font-size:1.1rem;
+    }
+    .section-heading span{
+        font-size: 1.8rem;
+    }
+    .timeline-logo{
+        width: 30px;
+    }
+    .timeline-designation{
+        font-size: 1.2rem;
+    }
+    .timeline-name,.timeline-duration{
+        font-size: 0.9rem;
+    }
+    .project-image-container {
+        height: 200px;
+        width: 200px;
+    }
+    #contact-info{
+        font-size: 60%;
+    }
+    .timeline-box{
+        width: 80%;
+        margin: 5px 0px;
+    }
+    .timeline-box:nth-child(n){
+        left:0%;
+        
+    }
+    .timeline-box:nth-child(n)::after{
+        left: 125%;
+    }
+    .timeline-divider{
+        right: 0%;
+        left: 100%;
+    }
 }
