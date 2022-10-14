@@ -14,6 +14,48 @@ body{
     padding-top: 1.2rem;
 }
 /*=============NAVIGATION BAR============*/
+.bars{
+    color: white;
+    margin: 0;
+    margin-right: 5% ;
+    display: none;
+}
+.bars i {
+    font-size: 2rem;
+}
+.dropdown-list{
+    margin: 0;
+    display: none;
+    background-color: rgb(168, 164, 164);
+    box-shadow: 0px 4px 8px 2px rgb(90, 83, 83);
+}
+.dropdown-list ul{
+    margin: 0.2rem 0.2rem;
+    text-align: left;
+    padding: 0px 0.8rem;
+}
+.dropdown-menu:hover .dropdown-list{
+    display: block;
+    position: absolute;
+    right: 3%;
+}
+.dropdown-list li{
+    margin: 0.4rem 0px;
+}
+.no-list-style{
+    list-style: none;
+}
+
+.no-list-style li {
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+.no-list-style li a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
 .horizontal-list{
     list-style: none;
     padding-left: 0px;
@@ -41,6 +83,9 @@ body{
 
 .text-center{
     text-align: center;
+}
+.text-right{
+    text-align: right;
 }
 /*============NAME and SOCIAL===================*/
 #name-social-container{
@@ -394,7 +439,12 @@ section:nth-child(2n){
 /* =========media queries============== */
 @media only screen and ( max-width:650px)
 {
-    
+    .bars{
+        display: block;
+    }
+    .nav-menu{
+        display: none;
+    }
     #name-social-container{
         margin-top: 18vh;
     }
@@ -435,11 +485,6 @@ section:nth-child(2n){
     }
     .timeline-name,.timeline-duration{
         font-size: 0.9rem;
-    }
-    #portfolio-display{
-        /* width: 90%; */
-        /* padding: 0 20px;
-        margin-bottom: 15px; */
     }
     .project-image-container {
         height: 220px;
