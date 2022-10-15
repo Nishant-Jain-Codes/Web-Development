@@ -1,15 +1,13 @@
 body{
     background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: block;
 }
 
-div{
-    /* margin:20%; */
+body>div{
+    position: relative;
+    margin: 15%;
     height: 100px;
     width: 100px;
-    
      
 }
 #div1{
@@ -45,12 +43,80 @@ div{
     height: 200px;
     background-color: rgb(225, 122, 122);
 }
+@keyframes circurmfarence {
+    0%{
+        transform: translate(0px,0px);
+    }
+    25%{
+        transform: translate(0px,100px);
+    }
+    50%{
+        transform: translate(100px,100px);
+        
+    }
+    75%{
+        transform: translate(100px,0px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+    
+}
 #inner-div{
     width: 100px;
     height: 100px;
     background-color: rgb(234, 234, 131);
-    transition: 1s ease-in-out;
+    animation: circurmfarence 3s ease-in-out infinite alternate;
 }
 #inner-div:hover{
     transform: translateY(100px);
+}
+@keyframes changeShape {
+    0%{
+        border-radius: 0%;
+    }
+    50%{
+        border-radius: 25%;
+        transform: rotate(180deg);
+    }
+    100%{
+        border-radius: 50%;
+        transform: rotate(360deg);
+    }
+}
+
+#div4{
+    background-color: aquamarine;
+    animation: changeShape 1.5s ease-in-out infinite alternate;
+}
+@keyframes bounce {
+    0%{
+        transform: translateY(-100px);
+    }
+    25%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }   
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+#bounce{
+    background: linear-gradient(to bottom,black,grey);
+    animation: bounce 1s ease-in 0s infinite alternate;
+}
+@keyframes fade-in-out {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+#fade-in-out{
+    background-color: blueviolet;
+    animation: fade-in-out 0.5s ease-in-out infinite alternate;
 }
