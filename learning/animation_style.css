@@ -144,3 +144,6 @@ body>div{
     background-color: rgb(156, 156, 238);
     animation: spin-small 0.5s ease-in-out infinite alternate;
 }
+.brown{
+    background-color: brown;
+}
