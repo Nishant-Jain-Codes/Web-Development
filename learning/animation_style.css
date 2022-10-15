@@ -18,16 +18,24 @@ body>div{
 #div1:hover{
     transform:  scale(2) rotate(100deg);
 }
+@keyframes to-ball-right {
+    from{
+        border-radius: 0%;
+        transform:  scale(1) rotate(0deg) ;
+        left: 30%;
+    }   
+    to{
+        border-radius: 50%;
+        transform:  scale(0.7) rotate(360deg) ;
+        left: 0%;
+    }
+}
 #div2{
     background:linear-gradient(to top right,rgb(255, 225, 0),orange);
-    transition:  1s ease-in-out;
+    animation: to-ball-right 1s ease-in-out infinite  reverse;
    
 }
-#div2:hover{
-  border-radius: 50%;
-  transform:  scale(0.4) rotate(100deg) ;
-  margin-left: 40%;
-}
+
 #div3{
     background:linear-gradient(to top right,black,orange);
     
@@ -118,5 +126,21 @@ body>div{
 }
 #fade-in-out{
     background-color: blueviolet;
-    animation: fade-in-out 0.5s ease-in-out infinite alternate;
+    animation: fade-in-out 2s ease-in-out infinite alternate;
+}
+@keyframes spin-small {
+    from{
+        border-radius:0%;
+        transform: scale(1) rotate(0deg);
+    }
+    to{
+        border-radius: 50%;
+        transform: scale(0.5) rotate(360deg);
+    }
+    
+}
+
+#spin-small{
+    background-color: rgb(156, 156, 238);
+    animation: spin-small 0.5s ease-in-out infinite alternate;
 }
