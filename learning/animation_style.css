@@ -1,10 +1,12 @@
 body{
     background-color: white;
-    display: block;
-    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
+
 div{
-    margin:20%;
+    /* margin:20%; */
     height: 100px;
     width: 100px;
     
@@ -13,7 +15,6 @@ div{
 #div1{
     background:linear-gradient(to top right,orangered,orange);
     transition: 2s ease-in-out;
-    transform: ;
    
 }
 #div1:hover{
@@ -38,4 +39,18 @@ div{
 #div3:hover{
     transform: scale(2) translate(100px);
     /* margin-left: 20%; */
+}
+#main-div{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(225, 122, 122);
+}
+#inner-div{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(234, 234, 131);
+    transition: 1s ease-in-out;
+}
+#inner-div:hover{
+    transform: translateY(100px);
 }
