@@ -1,3 +1,12 @@
 main .media img {
-    width: 10%;
+    width: 13%;
+}
+.btn-link{
+    text-align: none;
+    color: inherit;
+}
+.btn-link:hover{
+    text-align: none;
+    text-decoration: none;
+    color: inherit;
 }

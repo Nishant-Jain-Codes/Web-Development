@@ -4,16 +4,16 @@
         <title>play with bootstrap 2</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="play_with_bootstrap_2_style.css" type="text/css">
     </head>
-    <body>
+    <body class="bg-light">
         <div>
-            <header class="overflow-hidden">
+            <header class="overflow-hidden ">
                 <h1 class="text-center text-capitalize text-monospace">playing with bootstrap</h1>
             </header>
             <main class="container">
-                <div class="media">
+                <div class="media shadow-lg p-3 mb-5 bg-white rounded">
                     <img src="https://avatars1.githubusercontent.com/u/11960354?s=460&v=4" alt="codechef">
                         <div class="media-body">
                             <h5 class="mt-0">What is Code Chef?</h5>
@@ -22,7 +22,7 @@
                   </div>
                 <div class="row">
 
-                    <div>
+                    <div class=" col-md shadow-lg p-3 mb-5 bg-white rounded">
                         <!-- codechef contests -->
                         <h5>About code chef contests</h5>
                         <p>CodeChef was created as a community platform to help coders compete against each other and make it big in the world of computer programming. CodeChef conducts 8 or 9 rated coding competitions every month with participation from programmers all across the globe.</p>
@@ -36,10 +36,17 @@
                             </div>
                           </div>
                     </div>
-                    <div>
+                    <div class="col-sm shadow-lg p-3 mb-5 bg-white rounded">
                         <!-- codechef ranking -->
+                        <h5>Ratings</h5>
+                        <p>Based on your CodeChef overall rating, you will now fall in either Division 1 or Division 2 or Division 3 or Division 4. All CodeChef contests (Long Challenges, Cook-Offs, LunchTimes and Starters) will now have four parallel contests, one for Division 1, one for Division 2, one for Division 3 and another for Division 4. Though a contest could be rated only for some Divisions. You can learn more about this system </p>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary"><a href="" class="btn-link">All</a></button>
+                            <button type="button" class="btn btn-secondary"><a href="" class="btn-link">All</a></button>
+                            <button type="button" class="btn btn-secondary"><a href="" class="btn-link">All</a></button>
+                          </div>
                     </div>
-                    <div>
+                    <div class="col-sm shadow-lg p-3 mb-5 bg-white rounded">
                         <!-- pros of using codechef -->
                     </div>
                 </div>
