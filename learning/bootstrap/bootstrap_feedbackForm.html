@@ -17,9 +17,9 @@
   <body>
     <div class="text-center">
         <h1>Off canvas Component & Modal</h1>
-        <button type="button" class="btn btn-primary m-3 p-3" data-toggle="modal" data-target="#modal1">
+        <button type="button" class="btn btn-primary m-3 p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Submit Feedback (via Modal Component)
-        </button>
+          </button>
         <button class="btn btn-primary m-3 p-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
             Submit Feedback (via offcanvas Component)
         </button>
@@ -28,30 +28,27 @@
 
 
 <!-- Modal -->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Submit Feedback</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">Submit Feedback</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Your feedback matters to us!</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-            </form>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Your feedback matters to us!</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                </form>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
 <!-- offcanvas -->
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
