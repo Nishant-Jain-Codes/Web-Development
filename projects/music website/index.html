@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="index_style.css" type="text/css">
     <title>Music player</title>
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark text-white">
     <!-- header -->
     <header>
     <!-- navigation bar -->
@@ -52,11 +52,61 @@
     <div class="container-fluid overflow-hidden">
         <div class="row gx-3">
             <!-- main content of the page -->
-            <div id="main" 
-            class="p-3 mb-5 bg-danger col-md-8 col-xl-9"
+            <div id="main container" 
+            class="p-3 mb-5  col-md-8 col-xl-9"
             >
-            <!-- stufff -->
+                
+            <!-- topmost part of the main (slide show + top songs and recommentdaions)-->
+                <div class="row ">
+                    <!-- artist slide show -->
+                    <div class="col-md-7 shadow shadow-lg">
+                        <div id="slideshow_artists" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#"><img class="slideshow_img d-block w-100" src="images/artists/artist image/artist_nf.jpg" alt="First slide"></a>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="carousel_caption_heading">NF</h2>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img class="slideshow_img d-block w-100" src="images/artists/artist image/artist_linkinPark.jpg" alt="Second slide"></a>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="carousel_caption_heading">Linkin Park</h2>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img class="slideshow_img d-block w-100" src="images/artists/artist image/artist_BMTH.jpg" alt="Third slide"></a>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="carousel_caption_heading">BMTH</h2>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img class="slideshow_img d-block w-100" src="images/artists/artist image/artist_eminem.jpg" alt="Third slide"></a>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="carousel_caption_heading">eminem</h2>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- welcome user message  -->
+                    <div class="col-md-5 shadow p-2  d-none d-md-block">
+                        <h1 class="h1">Welcome Nishant</h1>
+                        <p class="lead"> Ready to enjoy some music?</p>
+                    </div>
+                    
+                
+                </div>
+            <!-- middle of the main -->
+                <div class="row bg-light ">
+                    <!-- different playlists -->
+                </div>
+            <!-- end of the main -->
+                <div class="row bg-info ">
+                   <!-- songs  -->
+                </div>    
             </div>
+            
             <!-- aside content and queue  -->
             <div id="aside" 
             class="p-3 mb-5 bg-info col-md-4 col-xl-3"

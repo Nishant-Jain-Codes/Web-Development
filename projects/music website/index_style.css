@@ -1,0 +1,15 @@
+/* for slide show */
+.carousel_caption_heading{
+    font-size:3vw;
+    text-transform: capitalize;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+.carousel_caption_heading:hover{
+    opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+    .carousel_caption_heading{
+        font-size:6vw;
+    }
+ }
