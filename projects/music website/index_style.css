@@ -13,3 +13,25 @@
         font-size:6vw;
     }
  }
+ /* for cover images of songs */
+ .cover_image{
+    width: 10vh;
+ }
+ /* for info about the songs */
+
+ .album_name,.artist_name{
+    padding: 0;
+    margin: 0;
+ }
+.album_name{
+    font-size:x-small;
+    opacity: 0.8;
+}
+.artist_name{
+    font-size: medium;
+    opacity: 0.9;
+}
+/* for shadows  */
+.shadow_white{
+    box-shadow: 0px 0px 4px 3px rgb(255, 255, 255,0.3) ;
+}

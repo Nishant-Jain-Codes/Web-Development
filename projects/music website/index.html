@@ -52,14 +52,14 @@
     <div class="container-fluid overflow-hidden">
         <div class="row gx-3">
             <!-- main content of the page -->
-            <div id="main container " 
-            class="p-3 mb-5 bg-danger col-md-8 col-xl-9"
+            <section id="main container " 
+            class="p-3 mb-5  col-md-8 col-xl-9"
             >
                 
             <!-- topmost part of the main (slide show + top songs and recommentdaions)-->
-                <div class="row ">
+              <section id="corousel_section" class="row">
                     <!-- artist slide show -->
-                    <div class="col-md-7 shadow shadow-lg">
+                    <div class=" col-md d-none d-md-block">
                         <div id="slideshow_artists" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -89,27 +89,97 @@
                             </div>
                         </div>
                     </div>
-                    <!-- welcome user message  -->
-                    <div class="col-md-5 shadow p-2  d-none d-md-block">
-                        <h1 class="h1">Welcome Nishant</h1>
-                        <p class="lead"> Ready to enjoy some music?</p>
+                    <!-- another carousel in xl screen - genre -->
+                    <div class="col-md ">
+                      <div id="slideshow_artists" class="carousel slide carousel-fade" data-ride="carousel">
+                          <div class="carousel-inner">
+                          <div class="carousel-item active">
+                              <a href="#"><img class="slideshow_img d-block w-100" src="images/genre/genre_pop.jpg" alt="First slide"></a>
+                              <div class="carousel-caption d-block">
+                                  <h2 class="carousel_caption_heading">pop</h2>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <a href="#"><img class="slideshow_img d-block w-100" src="images/genre/genre_rock.jpg" alt="Second slide"></a>
+                              <div class="carousel-caption d-block">
+                                  <h2 class="carousel_caption_heading">rock</h2>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <a href="#"><img class="slideshow_img d-block w-100" src="images/genre/genre_rap.jpg" alt="Third slide"></a>
+                              <div class="carousel-caption d-block">
+                                  <h2 class="carousel_caption_heading">rap</h2>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <a href="#"><img class="slideshow_img d-block w-100" src="images/genre/genre_lofi.png" alt="Third slide"></a>
+                              <div class="carousel-caption d-block">
+                                  <h2 class="carousel_caption_heading">lofi</h2>
+                              </div>
+                          </div>
+                        </div>
                     </div>
+              </section>
+                <!-- latest release -->
+                <section id="latest_releases ">
+                  <div class="alert alert-dark alert-dismissible fade show my-4" role="alert">
+                    <strong class="h2">Latest releases</strong>
+                    <div  class="row my-3 justify-content-between justify-content-md-evenly justify-content-lg-evenly text-capitalize">     
+                      <div class="col-xs m-2">
+                          <div class="media">
+                            <img class="mr-3 cover_image" src="images/album cover/albumCover_NF_clouds.jpg" alt="Generic placeholder image">
+                              <div class="media-body">
+                                <h5 class="">Drifting</h5>
+                                <p class="artist_name">NF</p>
+                                <p class="album_name">Clouds</p>
+                              </div>
+                          </div>  
+                      </div>
+                      <div class="col-xs m-2">
+                        <div class="media">
+                          <img class="mr-3 cover_image" src="images/album cover/albumCover_joji_smithereens.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5 class="">smithereens</h5>
+                              <p class="artist_name">joji</p>
+                              <p class="album_name">smithereens</p>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-xs  m-2">
+                      <div class="media">
+                        <img class="mr-3 cover_image" src="images/album cover/albumCover_eminem_curtainCall2.jpg" alt="Generic placeholder image">
+                          <div class="media-body">
+                            <h5 class="">curtain Call 2</h5>
+                            <p class="artist_name">eminem</p>
+                            <p class="album_name">curtain Call 2</p>
+                          </div>
+                      </div>  
+                  </div>
+                  <div class="col-xs  m-2">
+                    <div class="media">
+                      <img class="mr-3 cover_image" src="images/album cover/albumCover_queen_faceItAlone.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <h5 class="">face it alone</h5>
+                          <p class="artist_name">queen</p>
+                          <p class="album_name">face it alone</p>
+                        </div>
+                    </div>  
+                </div>
+              </div> 
+                  </div>
                     
-                
-                </div>
-            <!-- middle of the main -->
-                <div class="row bg-light ">
-                    <!-- different playlists -->
-                </div>
-            <!-- end of the main -->
+              </section>
                 <div class="row bg-info ">
-                   <!-- songs  -->
-                </div>    
-            </div>
+                   <!-- popular artist -->
+                </div>   
+                <div class="row bg-info ">
+                  <!-- songs -->
+               </div>    
+            </section>
             
             <!-- aside content and queue  -->
             <div id="aside" 
-            class="p-3 mb-5 bg-info col-md-4 col-xl-3"
+            class="p-3 mb-5  col-md-4 col-xl-3"
             >
             <!-- stuff -->
             </div>
