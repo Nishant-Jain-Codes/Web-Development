@@ -1,3 +1,8 @@
+/* for main section */
+#main_section{
+    overflow-y: auto;
+}
+
 /* for slide show */
 .carousel_caption_heading{
     font-size:3vw;
@@ -34,4 +39,16 @@
 /* for shadows  */
 .shadow_white{
     box-shadow: 0px 0px 4px 3px rgb(255, 255, 255,0.3) ;
+}
+/* popular artist section  */
+
+#popular_artists img{
+    width: 15vh;
+    height: 15vh;
+    border-radius:50%!important;
+    border: 3px solid rgb(255, 251, 251,0.3);
+}
+#popular_artists h3{
+    /* text-align: center; */
+    opacity: 0.7;
 }
