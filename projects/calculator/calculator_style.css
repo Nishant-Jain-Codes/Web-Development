@@ -16,12 +16,13 @@ table{
     font-size: xx-large;
     
 }
+
 th{
     padding: 15%;
 }
 td{
     padding: 5%;
-    border:1px solid rgba(13, 51, 77, 0.5);
+    border:8px solid rgba(13, 51, 77, 0.2);
     border-radius: 15px;
     transition: all 0.3s;
 }
@@ -50,4 +51,5 @@ td{
 #result{
     background-color: #47B5FF;
     border-radius: 15px;
+    font-size: 3.5rem;
 }
