@@ -2,6 +2,7 @@ var change_color = document.getElementById('change_color');
 var change_shape = document.getElementById('change_shape');
 var shapes = document.getElementsByClassName('shape');
 var container_div = document.getElementById('container_div');
+
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
