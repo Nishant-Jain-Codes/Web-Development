@@ -1,4 +1,4 @@
-// "use strict" 
+//  "use strict" 
 
 var input ='';
 var operation = document.getElementsByClassName('operation');
@@ -10,32 +10,27 @@ var allClear = document.getElementById('all_clear');
 for(var i=0;i<operation.length;i++)
 {
     operation[i].addEventListener('click',function(){
-        console.log(operation[i].textContent,' clicked');
-        output.textContent='';
-        input += operation[i].textContent;
+        var data = this.getAttribute('data-value');
+        // output.textContent='';
+        input += data;
+         output.textContent=input;
     });
 
 }
 for(var i=0;i<number.length;i++)
 {
     number[i].addEventListener('click',function(){
-        console.log(number[i].textContent,' clicked');
-        input += number[i].textContent;
+        var data = this.getAttribute('data-value');
+        input += data;
         output.textContent=input;
     });
 
 }
 result.addEventListener('click',function(){
-    if(input[0]<49 || input[0]>53 ||(input[input.length-1]==0&&input[input.length-2]!=0))
-        {
-            input='';
-            output.textContent='SYNTAX ERROR';
-        }
-    else 
-        {
-            output.textContent=input;
-            input='';
-        }
+
+       output.textContent=eval(input);
+       input=eval(input);
+
 });
 
 allClear.addEventListener('click',function(){

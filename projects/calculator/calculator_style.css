@@ -1,6 +1,6 @@
 #calculator{
     margin: auto;
-    margin-top: 30%;
+    margin-top: 10%;
     border: 1px solid;
     width: 50%;
     background-color: #06283D;
@@ -22,7 +22,7 @@ th{
 }
 td{
     padding: 5%;
-    border:8px solid rgba(13, 51, 77, 0.2);
+    border:8px solid rgba(13, 51, 77, 0.1);
     border-radius: 15px;
     transition: all 0.3s;
 }
