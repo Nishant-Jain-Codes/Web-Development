@@ -16,7 +16,7 @@ for(var i=0;i<navMenuAnchorTags.length;i++)
 function scrollVertically(targetSection)
 {
     var targ_coord = targetSection.getBoundingClientRect();
-    if(targ_coord.top<=0)
+    if(targ_coord.top<=0||((window.innerHeight + window.scrollY) >= document.body.offsetHeight))
     {
         clearInterval(interval);
         return;
