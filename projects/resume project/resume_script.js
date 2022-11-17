@@ -6,7 +6,7 @@ for(var i=0;i<navMenuAnchorTags.length;i++)
     navMenuAnchorTags[i].addEventListener('click',function(event){
         event.preventDefault();
         var targetSectionID=this.textContent.trim().toLowerCase();
-        console.log(targetSectionID);
+        // console.log(targetSectionID);
         var targetSection = document.getElementById(targetSectionID);
         interval = setInterval(function(){
             scrollVertically(targetSection);
