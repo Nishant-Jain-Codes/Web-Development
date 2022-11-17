@@ -73,4 +73,4 @@ function reachedSkillBar()
     }
 }
 // check scroll event
-window.addEventListener('scroll',reachedSkillBar());
+window.addEventListener('scroll',reachedSkillBar)
