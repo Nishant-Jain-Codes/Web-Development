@@ -216,45 +216,6 @@ section:nth-child(2n){
 .bg-brown{
     background-color: rgba(137, 31, 31, 0.896);
 }
-/*=========percentage classes================*/
-.ninety-percent{
-    width: 90%;
-    height: inherit;
-}
-.eighty-five-percent{
-    width: 85%;
-    height: inherit;
-}
-.eighty-percent{
-    width: 80%;
-    height: inherit;
-}
-.seventy-percent{
-    width:70%;
-    height: inherit;
-}
-.fifty-percent
-{
-    width: 50%;
-    height: inherit;
-}
-.forty-percent
-{
-    width: 40%;
-    height: inherit;
-}
-.thirty-percent{
-    width: 30%;
-    height: inherit;
-}
-.twenty-percent{
-    width: 20%;
-    height: inherit;
-}
-.zero-percent{
-    width: 0%;
-    height: inherit;
-}
 /* ==============margin classes=================== */
 .m0 {
     margin: 0;
