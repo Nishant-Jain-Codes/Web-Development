@@ -262,26 +262,32 @@ section:nth-child(2n){
 
 /*===========SKILLS==================*/
 #skill-display{
-    width: 70%;
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .skill-progress{
-    width: 9rem;
-    height: 2rem;
+    width: 11rem;
+    height: 2.2rem;
     background-color: lightgrey;
-    border-radius: 0.8rem;
-    box-shadow: 0px 0px 8px 2px rgba(210, 207, 207,1);
-    margin: 10px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1px 0px #b9b9b9 inset;
+    margin: 25px;
+    overflow: hidden;
 }
 .skill-progress>div{
     border-radius: 20px 0px 0px 20px;
+    box-shadow: 1px 1px 3px 2px #989882;
+
 }
 .skill-name span{
-    color:white;
+    color: white;
+    font-size: 1.7rem;
     margin-left: 10px;
-    font-size: 85%;
+    vertical-align: middle;
     
 }
 #skills{
