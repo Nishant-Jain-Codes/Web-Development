@@ -229,6 +229,20 @@ section:nth-child(2n){
     width: 80%;
     height: inherit;
 }
+.seventy-percent{
+    width:70%;
+    height: inherit;
+}
+.fifty-percent
+{
+    width: 50%;
+    height: inherit;
+}
+.forty-percent
+{
+    width: 40%;
+    height: inherit;
+}
 .thirty-percent{
     width: 30%;
     height: inherit;
