@@ -1,0 +1,21 @@
+body{
+    background-color: beige;
+}
+#catch {
+    width: 10vw;
+    height: 10vw;
+    margin: 0%;
+    padding: 0%;
+    background-color: orangered;
+}
+#catch:hover{
+    background-color: rgba(255, 68, 0, 0.9);
+    box-shadow: 0px 0px 3px 1px yellow;
+}
+#catch p{
+    color: white;
+    text-align: center;
+    padding-top: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
