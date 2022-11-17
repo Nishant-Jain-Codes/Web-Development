@@ -24,56 +24,53 @@ function scrollVertically(targetSection)
 
 //==============skill autofill animation========================
 
-var allSkillProgressBars = document.getElementsByClassName('skill-progress-bar');
-var skillsContainer = document.getElementById('skill-display');
-// console.log(allSkillProgressBars)
-var animationDone = false;
-//reset the inner skill progress bar to 0
-function initialiseBars()
+var allSkillBars = document.querySelectorAll('.skill-progress > div');
+function clearBar(bar)
 {
-    for(var bar of allSkillProgressBars)
-    {
-    bar.style.width = 0 + '%';
-    }
+    bar.style.width=0+'%';
 }
-initialiseBars();
-//start animaion on every skill ->increasse skill width from  0 to skill level
-function fillBars()
-{
-    for(let bar of allSkillProgressBars)
-    {
-        let currentWidth = 0;
-        let targetWidth = bar.getAttribute('data-skill-percentage');
-        let barAnimationInterval = setInterval(function(){
-            if(currentWidth>=targetWidth)
-            {
-                clearInterval(barAnimationInterval);
-                return;
-            }
-            currentWidth++;
-            bar.style.width = currentWidth + '%';
-            
-        },20);
-    }
-    animationDone = true;
-}
-// check if skill scontainer is visible
-function reachedSkillSection()
-{
-    var skillsContainerLoc = skillsContainer.getBoundingClientRect().top;
-    if(!animationDone&&skillsContainerLoc<=window.innerHeight)
-    {
-       
-        animationDone = true;
-        fillBars();
-        
-    }
-    else if(skillsContainerLoc>window.innerHeight)
-    {
-        animationDone=false;
-        initialiseBars();
-    }
-}
-// handel scroll event
-window.addEventListener("scroll", reachedSkillSection);
 
+function clearAllBars()
+{
+    for(var bar of allSkillBars)
+    {
+        clearBar(bar);
+    }
+}
+clearAllBars();
+function fireBar(bar)
+{
+    let curFill = 0;
+    let targetFill = bar.getAttribute('data-skill-percentage');
+    let skillBarInterval = setInterval(function(){
+        if(curFill>=targetFill)
+        {
+            clearInterval(skillBarInterval);
+            return;
+        }
+        curFill++;
+        bar.style.width=curFill+'%';
+    },10);
+}
+
+//check if reached skill bar
+function reachedSkillBar()
+{
+    for(let bar of allSkillBars)
+    {
+        let barLoc = bar.getBoundingClientRect().top;
+        let animated = bar.getAttribute('data-animation-done');
+        if(animated!='true'&&barLoc<=window.innerHeight)
+        {
+            bar.setAttribute('data-animation-done','true');
+            fireBar(bar);
+        }
+        else if(barLoc>window.innerHeight)
+        {
+            bar.setAttribute('data-animation-done','false');
+            clearBar(bar);
+        }
+    }
+}
+// check scroll event
+window.addEventListener('scroll',reachedSkillBar());
