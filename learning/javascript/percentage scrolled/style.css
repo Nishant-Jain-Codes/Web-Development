@@ -1,0 +1,13 @@
+#scroll_progress_indicator{
+    position: sticky;
+    /* display: inline-block; */
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 2px 1px yellow;
+    left: 100%;
+    top: 0%;
+    z-index: 1000;
+}
