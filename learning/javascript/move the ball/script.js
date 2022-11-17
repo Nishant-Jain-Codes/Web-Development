@@ -1,8 +1,7 @@
 var ball = document.getElementById('ball');
 var topM=0;
 var left=0;
-ball.marginTop =( Math.random()*90) +'%';
-ball.marginLeft = (Math.random()*90 )+'%';
+
 window.addEventListener('keydown',function(event)
 {
     var keypressd = event.key;
