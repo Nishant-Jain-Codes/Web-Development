@@ -9,10 +9,9 @@ function addTaskToDOM(task)
             <input 
             type="checkbox" 
             id="${task.id}" 
-            data-id="${task.id} 
             ${task.done ? 'checked' : ''}
             class="custom-checkbox">
-            <label for="${task.id}">${task.text}</label>
+            <label  for="${task.id}">${task.text}</label>
             <img src="images/bin.png" class="delete" data-id="${task.id}" />
     `;
     taskList.append(listele);
@@ -58,7 +57,7 @@ function addTask(task)
     {
         tasks.push(task);
         renderList();
-        // showNotification('task added successfully');
+        showNotification('task added successfully');
     }
     else 
     {
@@ -67,7 +66,7 @@ function addTask(task)
 }
 function showNotification(text)
 {
-    alert(text);
+    console.log(text);
 }
 function handelInputKeypress(e)
 {
@@ -92,17 +91,17 @@ function handelInputKeypress(e)
 function handelClickListner(e)
 {
     const target = e.target;
-    console.log(target)
     if(target.className==='delete')
     {
        const taskId = target.dataset.id;
        deleteTask(taskId);
+       return;
     }
-    else if(target.className=== 'custom-checkbox')
+    else if(target.className==='custom-checkbox')
     {
-        console.log('toggeling');
-    //     const taskId = target.dataset.id;
-    //    toggleTask(taskId);
+        const taskId = target.id;
+       toggleTask(taskId);
+    return;
     }
 }
 addTaskInput.addEventListener('keyup' , handelInputKeypress);

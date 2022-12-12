@@ -5,7 +5,6 @@
 2. completeing a todo
 3. delteing a todo
 4. total item count
-5. editing a todo
 ---
 ## data variables
 - tasklist [] = [{},{},{}...], consisting of various todo objects
@@ -17,11 +16,9 @@
 ---
 ## functions
 
-- [ ] addtodo
-- [ ] deletetodo
-- [ ] checktodo
-- [ ] edittodo
-- [ ] shownotifictaion
-- [ ] renderlist
-- [ ] completeCelebration
+- [X] addtodo
+- [X] deletetodo
+- [X] checktodo
+- [X] shownotifictaion
+- [X] renderlist
 ---
