@@ -104,5 +104,9 @@ function handelClickListner(e)
     return;
     }
 }
-addTaskInput.addEventListener('keyup' , handelInputKeypress);
-document.addEventListener('click',handelClickListner);
+function initialiseApp()
+{
+    addTaskInput.addEventListener('keyup' , handelInputKeypress);
+    document.addEventListener('click',handelClickListner);
+}
+initialiseApp();
