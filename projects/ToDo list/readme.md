@@ -8,8 +8,8 @@
 5. editing a todo
 ---
 ## data variables
-> tasklist [] = [{},{},{}...], consisting of various todo objects
->todo-object = {
+- tasklist [] = [{},{},{}...], consisting of various todo objects
+- todo-object = {
     int - id
     string - todo-heading
     bool - done
