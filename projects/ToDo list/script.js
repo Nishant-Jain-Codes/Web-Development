@@ -99,7 +99,7 @@
                 return ;
             }
             const task = {
-                title:text,
+                title,
                 id:Date.now(),
                 completed:false,
             }
