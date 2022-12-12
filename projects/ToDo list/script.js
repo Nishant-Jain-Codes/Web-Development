@@ -2,6 +2,24 @@ let tasks =[];
 let taskList = document.getElementById('list');
 let addTaskInput = document.getElementById('add');
 let tasksCounter = document.getElementById('tasks-counter');
+function fetchTodos()
+{
+    // get request 
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(function(response)
+        {
+            return response.json();
+        })
+        .then(function(data)
+        { 
+            tasks=data.slice(0,10);
+            renderList();
+        })
+        .catch(function(error)
+        {
+            console.log('error',error);
+        })
+}
 function addTaskToDOM(task)
 {
     const listele = document.createElement('li');
@@ -9,9 +27,9 @@ function addTaskToDOM(task)
             <input 
             type="checkbox" 
             id="${task.id}" 
-            ${task.done ? 'checked' : ''}
+            ${task.completed ? 'checked' : ''}
             class="custom-checkbox">
-            <label  for="${task.id}">${task.text}</label>
+            <label  for="${task.id}">${task.title}</label>
             <img src="images/bin.png" class="delete" data-id="${task.id}" />
     `;
     taskList.append(listele);
@@ -28,12 +46,12 @@ function renderList()
 function toggleTask(taskId)
 {
     let task = tasks.filter(function(t){
-        return t.id===taskId;
+        return t.id==taskId;
     });
     if(task.length>0)
     {
         let curTask = task[0];
-        curTask.done= (!curTask.done);
+        curTask.completed= (!curTask.completed);
         showNotification('task toggeled successfully');
         renderList();
     }
@@ -45,7 +63,7 @@ function toggleTask(taskId)
 function deleteTask(taskId)
 {
     const newtasks = tasks.filter(function(task){
-        return task.id!== taskId;
+        return task.id!=taskId;
     });
     tasks=newtasks;
     renderList();
@@ -64,24 +82,24 @@ function addTask(task)
         showNotification("task can't be added");
     }
 }
-function showNotification(text)
+function showNotification(title)
 {
-    console.log(text);
+    console.log(title);
 }
 function handelInputKeypress(e)
 {
     if(e.key==='Enter')
     {
-        let text = e.target.value;
-        if(!text)
+        let title = e.target.value;
+        if(!title)
         {
             showNotification("task can't be empty");
             return ;
         }
         const task = {
-            text,
-            id:Date.now().toString(),
-            done:false,
+            title:text,
+            id:Date.now(),
+            completed:false,
         }
         e.target.value = '';
         addTask(task);
@@ -106,6 +124,7 @@ function handelClickListner(e)
 }
 function initialiseApp()
 {
+    fetchTodos();
     addTaskInput.addEventListener('keyup' , handelInputKeypress);
     document.addEventListener('click',handelClickListner);
 }
