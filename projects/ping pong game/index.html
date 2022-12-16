@@ -8,32 +8,35 @@
     <!-- MY CSS STYLE SHEET -->
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
-
-  <body>
     
+  <body>
+    <!-- controls , score , game result section  -->
     <div id="info">
-      <div id="left-info">
+      <div id="left-info" class="info-box">
         <div class="controls">
-
+          <img src="images/keyboard-key-w.png" alt="W">
+          <img src="images/keyboard-key-s.png" alt="S">
         </div>
-        <span class="score" id="left-score">
-
-        </span>
+        <h1 class="score" id="left-score">
+          0
+        </h1>
       </div>
       <div id="game-info">
-
-        <h1>game-info</h1>
-
+        <img src="images/start-button.png" alt="">
+        <p id="game-info-heading">Ping Te Pong  </p>
+        <img src="images/restart.png" alt="">
       </div>
-      <div id="right-info">
+      <div id="right-info" class="info-box">
+        <h1 class="score" id="right-score">
+          0
+        </h1>
         <div class="controls">
-
+          <img src="images/keyboard-key-arrow-up.png" alt="up">
+          <img src="images/keyboard-key-arrow-down.png" alt="down">
         </div>
-        <span class="score" id="right-score">
-
-        </span>
       </div>
     </div>
+    <!-- game board -->
     <div id="board">
       <div id="ball">
       </div>
