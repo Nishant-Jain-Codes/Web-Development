@@ -3,7 +3,9 @@
 //=======setting up all the variables=====================
 let gameState = 'off';
 let paddle_left = document.getElementById('left-paddle');
+let initial_paddle_left = document.getElementById('left-paddle');
 let paddle_right = document.getElementById('right-paddle');
+let initial_paddle_right = document.getElementById('right-paddle');
 let board = document.getElementById('board');
 let initial_ball = document.getElementById('ball');
 let ball = document.getElementById('ball');
@@ -11,15 +13,15 @@ let score_left = document.getElementById('left-score');
 let score_right = document.getElementById('right-score');
 let game_heading = document.getElementById('game-info-heading');
 let paddle_left_coord = paddle_left.getBoundingClientRect();
+let initial_paddle_left_coord = paddle_left.getBoundingClientRect();
 let paddle_right_coord = paddle_right.getBoundingClientRect();
+let initial_paddle_right_coord = paddle_right.getBoundingClientRect();
 let initial_ball_coord = initial_ball.getBoundingClientRect();
 let ball_coord  = ball.getBoundingClientRect();
 let board_coord = board.getBoundingClientRect();
 let paddle_common = document.querySelector('.paddle').getBoundingClientRect();
-let speedX = getRandomSpeed();
-let speedY = getRandomSpeed();
-let directionX = getRandomeStartDir();
-let directionY = getRandomeStartDir();
+let speedX,speedY,directionX,directionY;
+
 //==========================================================
 //============ functions ===================================
 // function to get random speed
@@ -33,14 +35,73 @@ function getRandomeStartDir()
     return Math.floor(Math.random() * 2);
 }
 // function to handel game start request
+function startTheGame()
+{
+    console.log('start game called')
+    headMessage('Game Started')
+    requestAnimationFrame(()=>
+    {
+        speedX = getRandomSpeed();
+        speedY = getRandomSpeed();
+        directionX = getRandomeStartDir();
+        directionY = getRandomeStartDir();
+        moveBall(speedX,speedY,directionX,directionY);
+    });
+}
 function startGameRequest()
 {
-    console.log('start game');
+    if(gameState=='on')
+    {
+        return ;
+    }
+    else if(gameState=='pause')
+    {
+        console.log('pause');
+        requestAnimationFrame(()=>
+    {
+        speedX = getRandomSpeed();
+        speedY = getRandomSpeed();
+        directionX = getRandomeStartDir();
+        directionY = getRandomeStartDir();
+        moveBall(speedX,speedY,directionX,directionY);
+    });
+    }
+    else
+    {
+        let cnt = 3;
+        gameState = 'on';
+        let x = setInterval(function()
+        {
+            console.log(cnt);
+            headMessage(cnt);
+            cnt--;
+            if(cnt<0)
+            {
+                clearInterval(x);
+                startTheGame();
+            }
+        },1000);
+    }
 }
 // function to handel game restart request
 function reStartGameRequest()
 {
-    console.log('restart game');
+    // changing game state
+    gameState='off';
+    headMessage('Ping Te Pong')
+    //resetting paddles
+    paddle_left_coord=initial_paddle_left_coord;
+    paddle_left.style=initial_paddle_left;
+    paddle_left_coord=initial_paddle_right_coord;
+    paddle_right.style=initial_paddle_right;
+    //resetting ball location
+    ball_coord=initial_ball_coord;
+    ball.style = initial_ball.style;
+    // resetting the scores
+    score_left.innerHTML=0;
+    score_left.dataset.points="0";
+    score_right.innerHTML=0;
+    score_right.dataset.points="0";
 }
 function headMessage(message)
 {
@@ -50,12 +111,13 @@ function matchEnd(Lscore,Rscore)
 {
     if(Lscore>Rscore)
     {
-        headMessage('!!Player 1 Wins !!')
+        headMessage('!!Player 1 Wins!!')
     }
     else
     {
-        headMessage('!!Player 2 Wins !!')
+        headMessage('!!Player 2 Wins!!')
     }
+    reStartGameRequest();
 }
 function addPoint(player)
 {
@@ -72,7 +134,7 @@ function addPoint(player)
         curscoreR++;
         score_right.innerText=curscoreR;
     }
-    if(cursoreL>5||curscoreR>=5)
+    if(curscoreL>5||curscoreR>=5)
     {
         matchEnd(curscoreL,curscoreR);
     }
@@ -84,6 +146,7 @@ function addPoint(player)
     // y = 0 = left
 function moveBall(speedX,speedY,directionX,directionY)
 {
+    console.log('move ball running');
     // when ball hits the top borders of the board
     if(ball_coord.top<=board_coord.top)
     {
@@ -102,19 +165,34 @@ function moveBall(speedX,speedY,directionX,directionY)
     }
     if(ball_coord.right>=paddle_right_coord.left && ball_coord.top<=paddle_right_coord.top && ball_coord.bottom>=paddle_right_coord.bottom)
     {
-        directionX = 1;
+        directionX = 0;
         speedX = getRandomSpeed();
         speedY = getRandomSpeed();
     }
     // ball misses the paddle and hit the walls
-    if(ball_coord.left<=board_coord.left)
+    if(ball_coord.left<=board_coord.left||ball_coord.right>=board_coord.right)
     {
-        addPoint('right');
+        if(ball_coord.left<=board_coord.left)
+        {
+            addPoint('right');
+        }
+        else
+        {
+            addPoint('left');
+        }
+        // after hitting the wall - ball will get reset to center
+        gameState='pause';
+        ball_coord=initial_ball_coord;
+        ball.style = initial_ball.style;
+        headMessage('Press Enter');
+        return;
     }
-    if(ball_coord.right>=board_coord.right)
-    {
-        addPoint('left');
-    }
+    ball.style.top = ball_coord.top + (speedY*(directionY == 0? -1 : 1 ))+'px'; 
+    ball.style.left = ball_coord.left + (speedX*(directionX == 0? -1 : 1 ))+'px';
+    ball_coord = ball.getBoundingClientRect();
+    requestAnimationFrame(()=>{
+        moveBall(speedX,speedY,directionX,directionY);
+    });
 }
 // function to handel player movement
 function movePlayerRequest(event_key)
@@ -146,7 +224,8 @@ function movePlayerRequest(event_key)
 function handleInputKeydown(event)
 {
     const event_key = event.key;
-    if(event_key==='enter')
+    console.log(event_key);
+    if(event_key==='Enter')
     {
         startGameRequest();
     }
@@ -173,11 +252,40 @@ function handleInputClick(event)
         reStartGameRequest();
     }
 }
+// function to handel hover events
+function handleInputhover(event)
+{
+    let target_class = event.target.className;
+    if(target_class==='start_game')
+    {
+        if(gameState=='on')
+        {
+            headMessage('game is running')
+        }
+        else
+        {
+            headMessage('Start Game?')
+        }
+        setTimeout(function(){
+            headMessage('Ping Te Pong');
+        },1000)
+    }
+    else if(target_class==='restart_game')
+    {
+        headMessage('ReStart Game?')
+        setTimeout(function(){
+            headMessage('Ping Te Pong');
+        },1000)
+    }
+
+
+}
 // function to start the webapp
 function initialiseApp()
 {
     document.addEventListener('keydown',handleInputKeydown);
     document.addEventListener('click',handleInputClick);
+    document.addEventListener('mouseover',handleInputhover);
 }
 //==========================================================
 //============ function call ===============================
