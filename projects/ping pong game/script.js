@@ -119,20 +119,21 @@ function matchEnd(Lscore,Rscore)
     }
     reStartGameRequest();
 }
+
 function addPoint(player)
 {
-    var curscoreL = parseInt(score_left.dataset.points) ;//gets the points of the player from data-points attribute 
-    var curscoreR = parseInt(score_right.dataset.points) ;
+    var curscoreL = score_left.innertHTML ;//gets the points of the player from data-points attribute 
+    var curscoreR = score_right.innerHTML ;
     if(player == 'left')
     {
         
         curscoreL++;
-        score_left.innerText=curscoreL;
+        score_left.innerHTML=curscoreL;
     }
     else 
     {
         curscoreR++;
-        score_right.innerText=curscoreR;
+        score_right.innerTHTML=curscoreR;
     }
     if(curscoreL>5||curscoreR>=5)
     {
