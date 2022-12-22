@@ -37,7 +37,6 @@ function getRandomeStartDir()
 // function to handel game start request
 function startTheGame()
 {
-    console.log('start game called')
     headMessage('Game Started')
     requestAnimationFrame(()=>
     {
@@ -56,7 +55,6 @@ function startGameRequest()
     }
     else if(gameState=='pause')
     {
-        console.log('pause');
         requestAnimationFrame(()=>
     {
         speedX = getRandomSpeed();
@@ -72,7 +70,6 @@ function startGameRequest()
         gameState = 'on';
         let x = setInterval(function()
         {
-            console.log(cnt);
             headMessage(cnt);
             cnt--;
             if(cnt<0)
@@ -108,36 +105,46 @@ function headMessage(message)
     game_heading.innerText=message;
 }
 function matchEnd(Lscore,Rscore)
-{
+{  
+    console.log('matchend');
+    let time = 1500;
+    let x = setInterval(function(){
     if(Lscore>Rscore)
     {
-        headMessage('!!Player 1 Wins!!')
+        console.log('p1 won');
+        headMessage("Player 1 Wins");
     }
     else
     {
-        headMessage('!!Player 2 Wins!!')
+        console.log('p2 won');
+        headMessage("Player 2 Wins");
     }
-    reStartGameRequest();
+    time-=100;
+    if(time<=0)
+    {
+        clearInterval(x);
+        setTimeout(function(){
+            reStartGameRequest();
+        },1500);
+    }
+    
+    
+    },200);
 }
 
 function addPoint(player)
 {
-    var curscoreL = score_left.innertHTML ;//gets the points of the player from data-points attribute 
-    var curscoreR = score_right.innerHTML ;
     if(player == 'left')
     {
-        
-        curscoreL++;
-        score_left.innerHTML=curscoreL;
+        score_left.innerHTML = +score_left.innerHTML + 1;
     }
     else 
     {
-        curscoreR++;
-        score_right.innerTHTML=curscoreR;
+        score_right.innerHTML = +score_right.innerHTML + 1;
     }
-    if(curscoreL>5||curscoreR>=5)
+    if(score_left.innerHTML>5||score_right.innerHTML>5)
     {
-        matchEnd(curscoreL,curscoreR);
+        matchEnd(score_left.innerHTML,score_right.innerHTML);
     }
 }
 // function to move ball
@@ -147,7 +154,7 @@ function addPoint(player)
     // y = 0 = left
 function moveBall(speedX,speedY,directionX,directionY)
 {
-    console.log('move ball running');
+
     // when ball hits the top borders of the board
     if(ball_coord.top<=board_coord.top)
     {
@@ -158,13 +165,13 @@ function moveBall(speedX,speedY,directionX,directionY)
         directionY=0;
     }
     // when ball hits the paddles
-    if(ball_coord.left<=paddle_left_coord.right && ball_coord.top<=paddle_left_coord.top && ball_coord.bottom>=paddle_left_coord.bottom)
+    if(ball_coord.left<=paddle_left_coord.right && ball_coord.top>=paddle_left_coord.top && ball_coord.bottom<=paddle_left_coord.bottom)
     {
         directionX = 1;
         speedX = getRandomSpeed();
         speedY = getRandomSpeed();
     }
-    if(ball_coord.right>=paddle_right_coord.left && ball_coord.top<=paddle_right_coord.top && ball_coord.bottom>=paddle_right_coord.bottom)
+    if(ball_coord.right>=paddle_right_coord.left && ball_coord.top>=paddle_right_coord.top && ball_coord.bottom<=paddle_right_coord.bottom)
     {
         directionX = 0;
         speedX = getRandomSpeed();
@@ -173,7 +180,14 @@ function moveBall(speedX,speedY,directionX,directionY)
     // ball misses the paddle and hit the walls
     if(ball_coord.left<=board_coord.left||ball_coord.right>=board_coord.right)
     {
-        if(ball_coord.left<=board_coord.left)
+        let prev_ball_coord = ball_coord;
+        // after hitting the wall - ball will get reset to center
+        gameState='pause';
+        ball_coord=initial_ball_coord;
+        ball.style = initial_ball.style;
+        headMessage('Press Enter');
+        // incrementing the points 
+        if(prev_ball_coord.left<=board_coord.left)
         {
             addPoint('right');
         }
@@ -181,11 +195,6 @@ function moveBall(speedX,speedY,directionX,directionY)
         {
             addPoint('left');
         }
-        // after hitting the wall - ball will get reset to center
-        gameState='pause';
-        ball_coord=initial_ball_coord;
-        ball.style = initial_ball.style;
-        headMessage('Press Enter');
         return;
     }
     ball.style.top = ball_coord.top + (speedY*(directionY == 0? -1 : 1 ))+'px'; 
@@ -201,23 +210,23 @@ function movePlayerRequest(event_key)
     //for left paddle
     if(event_key==='w')
     {
-        paddle_left.style.top = Math.max(board_coord.top,paddle_left_coord.top - (window.innerHeight*0.02))+7+'px' ;//+ and - 7 to prevent overlapping with border
+        paddle_left.style.top = Math.max(board_coord.top,paddle_left_coord.top - (window.innerHeight*0.04))+7+'px' ;//+ and - 7 to prevent overlapping with border
         paddle_left_coord =paddle_left.getBoundingClientRect();
     }
     if(event_key==='s')
     {
-        paddle_left.style.top = Math.min(board_coord.bottom-paddle_common.height,paddle_left_coord.top + (window.innerHeight*0.02))-7+'px';
+        paddle_left.style.top = Math.min(board_coord.bottom-paddle_common.height,paddle_left_coord.top + (window.innerHeight*0.04))-7+'px';
         paddle_left_coord =paddle_left.getBoundingClientRect();
     }
     // for right paddle 
     if(event_key==='ArrowUp')
     {
-        paddle_right.style.top = Math.max(board_coord.top,paddle_right_coord.top - (window.innerHeight*0.02))+7+'px';
+        paddle_right.style.top = Math.max(board_coord.top,paddle_right_coord.top - (window.innerHeight*0.04))+7+'px';
         paddle_right_coord =paddle_right.getBoundingClientRect();
     }
     if(event_key==='ArrowDown')
     {
-        paddle_right.style.top = Math.min(board_coord.bottom-paddle_common.height,paddle_right_coord.top + (window.innerHeight*0.02))-7+'px';
+        paddle_right.style.top = Math.min(board_coord.bottom-paddle_common.height,paddle_right_coord.top + (window.innerHeight*0.04))-7+'px';
         paddle_right_coord =paddle_right.getBoundingClientRect();
     }
 }
@@ -225,7 +234,6 @@ function movePlayerRequest(event_key)
 function handleInputKeydown(event)
 {
     const event_key = event.key;
-    console.log(event_key);
     if(event_key==='Enter')
     {
         startGameRequest();
