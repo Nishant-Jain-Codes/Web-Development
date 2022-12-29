@@ -10,6 +10,10 @@ function fetchRandomDogImg()
     }
     xhrRequest.open('get','https://dog.ceo/api/breeds/image/random',true);
     xhrRequest.send();
+    xhrRequest.onerror = function()
+    {
+        console.log('request failed');
+    };
 }
 let btn = document.getElementById('fetch');
 btn.addEventListener('click',fetchRandomDogImg);
