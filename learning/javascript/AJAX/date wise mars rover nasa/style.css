@@ -1,0 +1,43 @@
+body{
+    background-color:black;
+    color: white;
+}
+form{
+    margin-top: 1vh;
+}
+form label {
+    font-size: 3vw;
+}
+form input{
+    padding: 1vh;
+}
+button{
+    padding: 0.8vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    letter-spacing: 0.8vw;
+    font-size: larger;
+    font-weight: 800;
+    background-color:cornflowerblue;
+}
+h1{
+    text-align: center;
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+.flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#img_container img {
+    max-height: 400px;
+    max-width: 100%;
+    min-height: 200px;
+    margin: 20px;
+    border-radius: 15px;
+    border: 4px solid grey;
+}
