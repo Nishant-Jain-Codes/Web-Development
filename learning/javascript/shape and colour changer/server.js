@@ -8,8 +8,8 @@ function requestHandler(req,res)
     res.writeHead(200,{
         'content-type':'text/html'
      })
-    let filePath = './Web-Development/learning/javascript/shape and colour changer/index.html';
-    fs.readFile(filePath,function(error,data){
+    let filePath1 = './Web-Development/learning/javascript/shape and colour changer/index.html';
+    fs.readFile(filePath1,function(error,data){
         if(error)
         {
             console.log('error',error);
@@ -19,7 +19,7 @@ function requestHandler(req,res)
         {
             return res.end(data);
         }
-    })  
+    });
 }
 const server = http.createServer(requestHandler);
 server.listen(port,function(error){
