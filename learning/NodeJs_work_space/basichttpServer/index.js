@@ -5,7 +5,9 @@ const fs = require('fs');//fs =='file system'
 function requestHandler(req,res)
 {
     console.log(req.url);
-    res.writeHead()
+    res.writeHead(200,{
+        'content-type':'text/html'
+     })
     res.end('got it ')
 }
 const server = http.createServer(requestHandler);
