@@ -1,0 +1,13 @@
+body{
+    background-color: bisque !important;
+}
+.custom_btn{
+    margin: auto!important;
+    width: 100%;
+
+}
+
+#dog-img-container>img{
+    width: 100%;
+    max-height: 70vh;
+}

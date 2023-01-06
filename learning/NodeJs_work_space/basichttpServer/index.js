@@ -1,10 +1,12 @@
 const http = require('http');
 const port = 8000;
+const fs = require('fs');//fs =='file system'
+//./Web-Development/learning/NodeJs_work_space/basichttpServer/index.html
 function requestHandler(req,res)
 {
-    console.log(req.url);       
-    res.writeHead();
-    res.end('got it ');
+    console.log(req.url);
+    res.writeHead()
+    res.end('got it ')
 }
 const server = http.createServer(requestHandler);
 server.listen(port,function (error){
@@ -15,6 +17,6 @@ server.listen(port,function (error){
         }
     else 
         {
-            console.log("server is up and running on port : ",port);
+            console.log("server is running on port: ",port);
         }
 });
