@@ -2,6 +2,7 @@ const express = require('express');
 const port = 8000;
 const app = express();//app now contains all functionalities of express module
 app.get('/',function(req,res){
+    console.log(req);
     res.send('its running ');
 })
 app.listen(port,function(error){
