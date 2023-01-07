@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const db=require('./config/mongoose');
 //variables
 const port = 8000;
 const app = express();
