@@ -36,26 +36,38 @@ let contactList =[
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'))
 //middle ware app.use(function(req,res,next));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));//reads the form data and convert it into keys and values pair
 app.use(express.static('assets'));
 //============= get route controllers
 app.get('/',function(req,res){
-    // console.log('my name from get ="/" : ',req.myName);
+    
     return res.render('home',{
-        'title' : 'Contats list',
+        'title' : 'Contacts list',
         contact_list : contactList
     });
 });
 app.get('/profile',function(req,res){
     return res.render('profile');
 });
-
+app.get('/delete-contact/',function(req,res){
+    console.log(req.query);
+    let phoneDel = req.query.phone;
+    let contactIdx = contactList.findIndex(function(contact){
+        return contact.phone=phoneDel;
+    });
+    if(contactIdx!=-1)
+    {
+        contactList.splice(contactIdx,1);
+    }
+    return res.redirect('back');
+})
 
 app.post('/create-contact',function(req,res){
-    contactList.push({
-        name : req.body.name,
-        phone : req.body.phone
-    });
+    contactList.push(req.body);//below one can also be used
+    // contactList.push({
+    //     name : req.body.name,
+    //     phone : req.body.phone
+    // });
     return res.redirect('back');
     // return res.redirect('/');can use this too
 });
@@ -65,7 +77,7 @@ app.post('/create-contact',function(req,res){
 app.listen(port,function(error){
     if(error)
     {
-        console.log('error occured :-',error);
+        console.log('error occurred :-',error);
         return ;
     }
     else 
