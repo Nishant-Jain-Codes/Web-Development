@@ -9,35 +9,38 @@ const app = express();
 let contactList =[
     {
         name:'nishant',
-        phone:'1112312'
+        phone:'1233245326'
     },
     {
         name:'ishant',
-        phone:'1231212'
+        phone:'1233423456'
     },
     {
         name:'arun',
-        phone:'21123112'
+        phone:'1233445566'
     },
     {
         name:'varun',
-        phone:'22312312'
+        phone:'1233123466'
     },
     {
         name:'bhem',
-        phone:'12211323'
+        phone:'1233412356'
     },
     {
         name:'aron',
-        phone:'12331231'
+        phone:'1232445566'
     }
 ]
 //setting properties of app and giving them values app.set(value,property)
-
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'))
+//middle ware app.use(function(req,res,next));
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('assets'));
+//============= get route controllers
 app.get('/',function(req,res){
+    // console.log('my name from get ="/" : ',req.myName);
     return res.render('home',{
         'title' : 'Contats list',
         contact_list : contactList
