@@ -58,9 +58,6 @@ app.get('/',function(req,res){
         }
     });
 });
-app.get('/profile',function(req,res){
-    return res.render('profile');
-});
 app.get('/delete-contact/',function(req,res){
     //get id from the query in te url
     let id = req.query.id;
