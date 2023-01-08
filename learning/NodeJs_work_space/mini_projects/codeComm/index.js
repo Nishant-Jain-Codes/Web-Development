@@ -4,7 +4,7 @@ const port = 8000;
 
 // * setting up a middle ware which will do the following
 // * routing the home url to all the further url 
-app.use('/',require('./routes/index'));
+app.use('/',require('./routes'));
 
 app.listen(port,function(error){
     if(error)
