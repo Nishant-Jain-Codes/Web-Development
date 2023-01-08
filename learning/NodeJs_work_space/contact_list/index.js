@@ -2,7 +2,9 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db=require('./config/mongoose');
+const db = require('./config/mongoose');
+const Contact = require('./models/contact');
+const { moveMessagePortToContext } = require('worker_threads');
 //variables
 const port = 8000;
 const app = express();
@@ -42,35 +44,58 @@ app.use(express.static('assets'));
 //============= get route controllers
 app.get('/',function(req,res){
     
-    return res.render('home',{
-        'title' : 'Contacts list',
-        contact_list : contactList
+    Contact.find({},function(err,contacts){
+        if(err){
+            console.log('error in fetching contacts from db',err);
+            return ;
+        }
+        else
+        {
+            return res.render('home',{
+                'title' : 'Contacts list',
+                contact_list : contacts
+            });
+        }
     });
 });
 app.get('/profile',function(req,res){
     return res.render('profile');
 });
 app.get('/delete-contact/',function(req,res){
-    console.log(req.query);
-    let phoneDel = req.query.phone;
-    let contactIdx = contactList.findIndex(function(contact){
-        return contact.phone=phoneDel;
+    //get id from the query in te url
+    let id = req.query.id;
+    //find the contact in the database useing id and delete it
+    Contact.findByIdAndDelete(id,function(err){
+        if(err)
+        {
+            console.log('error in deleting the contact',err);
+            return;
+        }
+        else
+        {
+            res.redirect('back');
+        }
     });
-    if(contactIdx!=-1)
-    {
-        contactList.splice(contactIdx,1);
-    }
-    return res.redirect('back');
+    
 })
 
 app.post('/create-contact',function(req,res){
-    contactList.push(req.body);//below one can also be used
-    // contactList.push({
-    //     name : req.body.name,
-    //     phone : req.body.phone
-    // });
-    return res.redirect('back');
-    // return res.redirect('/');can use this too
+    
+    Contact.create({
+        name: req.body.name,
+        phone:req.body.phone
+    },function(err,newContact){
+        if(err)
+        {
+            console.log('error in adding the contact',err);
+            return;
+        }
+        else
+        {
+            return res.redirect('back');
+        }
+    });
+
 });
 
 
