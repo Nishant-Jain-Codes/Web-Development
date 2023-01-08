@@ -5,7 +5,8 @@ const port = 8000;
 // * setting up a middle ware which will do the following
 // * routing the home url to all the further url 
 app.use('/',require('./routes'));
-
+app.set('view engine','ejs');
+app.set('views','./views');
 app.listen(port,function(error){
     if(error)
     {
