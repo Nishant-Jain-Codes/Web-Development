@@ -5,36 +5,8 @@ const bodyParser = require('body-parser');
 const db = require('./config/mongoose');
 const Contact = require('./models/contact');
 const { moveMessagePortToContext } = require('worker_threads');
-//variables
 const port = 8000;
 const app = express();
-//contact list data
-let contactList =[
-    {
-        name:'nishant',
-        phone:'1233245326'
-    },
-    {
-        name:'ishant',
-        phone:'1233423456'
-    },
-    {
-        name:'arun',
-        phone:'1233445566'
-    },
-    {
-        name:'varun',
-        phone:'1233123466'
-    },
-    {
-        name:'bhem',
-        phone:'1233412356'
-    },
-    {
-        name:'aron',
-        phone:'1232445566'
-    }
-]
 //setting properties of app and giving them values app.set(value,property)
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'))
@@ -75,7 +47,6 @@ app.get('/delete-contact/',function(req,res){
     });
     
 })
-
 app.post('/create-contact',function(req,res){
     
     Contact.create({
@@ -94,9 +65,6 @@ app.post('/create-contact',function(req,res){
     });
 
 });
-
-
-
 app.listen(port,function(error){
     if(error)
     {
