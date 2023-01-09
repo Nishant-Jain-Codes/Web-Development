@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
+const db = require('./config/mongoose');
 //telling app to where to lookout for static files
 app.use(express.static('./assets'));
 //put style and script from sub pages to their destined location 
