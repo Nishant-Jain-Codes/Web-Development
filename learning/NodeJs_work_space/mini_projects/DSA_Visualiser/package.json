@@ -1,0 +1,19 @@
+{
+  "name": "dsa_visualiser",
+  "version": "1.0.0",
+  "description": "data structure and algorithm visualiser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "structure",
+    "algorithm",
+    "searching",
+    "sorting",
+    "recursion"
+  ],
+  "author": "Nishant Jain",
+  "license": "ISC"
+}
