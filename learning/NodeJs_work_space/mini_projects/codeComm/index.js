@@ -1,8 +1,14 @@
 const express = require('express');
-const app = express();
-const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 8000;
+//setting url parser middle ware
+app.use(bodyParser.urlencoded({extended: false}));
+//telling app to use cookier parser
+app.use(cookieParser());
 //telling app to where to lookout for static files
 app.use(express.static('./assets'));
 //put style and script from sub pages to their destined location 
