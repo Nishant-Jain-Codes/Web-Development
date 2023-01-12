@@ -34,6 +34,16 @@ module.exports.signIn = function(req,res){
         title: "codeComm | Sign Ip"
     })
 }
+module.exports.destroySession = function(req,res){
+    req.logout(function(error){
+        if(error){
+            console.log('error in logging out ',error);
+            return ;
+        }
+        return res.redirect('/');
+    });
+    
+}
 //get the sign up data
 module.exports.create = function(req,res){
    if(req.body.password != req.body.confirm_password)

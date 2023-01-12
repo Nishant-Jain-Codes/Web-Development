@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const session= require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const port = 8000;
@@ -26,6 +27,7 @@ app.use(expressLayouts);
 app.set('view engine','ejs');
 app.set('views','./views');
 //encoding the cookies
+//mongo store is use to store the session cookie in the dp so that user doesn't get logged out after every server reset
 app.use(session({
     name : 'codeComm',
     //TODO: change the secret before deployment
@@ -34,7 +36,8 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000*60*100) //hundred minutes
-    }
+    },
+    store: MongoStore.create(db)
 }));
 app.use(passport.initialize());
 app.use(passport.session());
