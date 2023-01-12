@@ -1,0 +1,10 @@
+$dark-color: #000000;
+$light-color: #EEEEEE;
+*{
+    margin: 0;
+    padding: 0;
+}
+#layout_body{
+    height: 100vh;
+    background-color: $light-color;
+}

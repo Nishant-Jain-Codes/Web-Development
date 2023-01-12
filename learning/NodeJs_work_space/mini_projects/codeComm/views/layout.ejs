@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/483c01a830.js" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
     <%- style%>
     <title>
         <%=title%>
@@ -12,8 +16,9 @@
 </head>
 <body>
     <%- include('_header'); %>
-    
+    <main id="layout_body">
     <%- body %>
+    </main>
 
     <%- include('_footer'); %>
 

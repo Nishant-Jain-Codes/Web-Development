@@ -10,18 +10,15 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 const app = express();
 const port = 8000;
-/*
-! use this when sass works in the machine
 const sassMiddleware = require('node-sass-middleware');
+//middleware to convert scss to css
 app.use(sassMiddleware({
-    src: '/assets/scss',
-    dest: '/assets/css',
+    src: './assets/scss',
+    dest: './assets/css',
     debug: true,
     outputStyle: 'extended',
-    prefix: '/css',
-
-}))
-*/
+    prefix: '/css'
+}));
 //setting url parser middle ware
 app.use(bodyParser.urlencoded({extended: false}));
 //telling app to use cookies parser
