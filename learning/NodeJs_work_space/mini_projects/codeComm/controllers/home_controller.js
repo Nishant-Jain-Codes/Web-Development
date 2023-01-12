@@ -1,8 +1,10 @@
-//a controller is a set of different actions
-// module.exports.actionName = function(req,res){}
+const Post = require('../models/post');
 module.exports.home = function(req,res){
-    //res.render('fileName',the ejs variable object);
-    return res.render('home',{
-        title : 'Home'
-    });
+    Post.find({},function(error,posts){
+        if(error){console.log('error in finding post to print',error);return;}
+        return res.render('home',{
+            title : 'Home',
+            posts: posts
+        });
+    })
 }

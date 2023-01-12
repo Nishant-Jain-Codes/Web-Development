@@ -1,3 +1,24 @@
-
+<link rel="stylesheet" href="/css/home.css">
 <h1>this is codeComm a community of coders </h1>
 <h3>this is the <%=title%> page</h3>
+
+<section id="feed-posts">
+    <h4>
+        Posts
+    </h4>
+    <h5>create Post</h5>
+    <form action="/posts/create" id="new-post-form" method="POST">
+        <textarea name="content" cols="30" rows="3" placeholder="Type Here...."></textarea>
+        <input type="submit" value="Post">
+    </form>
+    <h5>all Posts</h5>
+    <div id="all-posts">
+        <ul>
+            <% for( let post of  locals.posts){ %>
+                <li>
+                    <%=post.content%>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</section>
