@@ -9,16 +9,27 @@ module.exports.user = function(req,res){
 
 module.exports.profile = function(req,res){
 
-    return res.end('<h1>User Profile</h1>');
+    return res.render('user_profile',{
+        user: req.user,
+        title: "codeComm | Users ->Profile"
+    });
 }
 //set up sign up action
 module.exports.signUp = function(req,res){
+    if(req.isAuthenticated())
+    {
+       return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up',{
         title: "codeComm | Sign Up"
     })
 }
 // set up sign in action
 module.exports.signIn = function(req,res){
+    if(req.isAuthenticated())
+    {
+       return res.redirect('/users/profile');
+    }
     return res.render('user_sign_in',{
         title: "codeComm | Sign Ip"
     })
@@ -46,5 +57,5 @@ module.exports.create = function(req,res){
 }
 //action for create session / logging in
 module.exports.createSession = function(req,res){
-    //TODO: later
+    return res.redirect('/');
 }
