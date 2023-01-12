@@ -15,7 +15,7 @@ footer {
       font-size: 10px;
       opacity: 0.6; }
     footer #footer-title h1 {
-      font-family: cursive,halvetica;
+      font-family: cursive,helvetica;
       font-size: 25px; }
   footer #footer-links {
     display: flex;
@@ -24,7 +24,7 @@ footer {
     footer #footer-links li {
       margin-left: 1vw;
       margin-right: 1vw;
-      font-family: cursive,halvetica;
+      font-family: cursive,helvetica;
       font-size: 15px; }
     footer #footer-links a {
       color: #EEEEEE;
