@@ -17,3 +17,22 @@ module.exports.create = function(req,res){
         
     });
 }
+module.exports.destroy = function(req,res){
+    Comment.findById(req.params.id,function(error,comment){
+        if(error){console.log('error in finding comment to delete',error);return;}
+        if( comment.user == req.user.id){
+            let postId = comment.post;
+            comment.remove();
+            Post.findByIdAndUpdate(postId,{
+                $pull: {comments: req.params.id},
+                function(error,post){
+                    if(error){console.log('error in finding comment int the post to delete',error);return;}
+                    return res.redirect('back');
+                }
+            });
+            return res.redirect('back');
+        }else{
+            return res.redirect('back');
+        }
+    });
+}
