@@ -1,10 +1,19 @@
 const Post = require('../models/post');
 module.exports.home = function(req,res){
-    Post.find({},function(error,posts){
+    //populating multiple fields of the post
+    Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
+    })
+    .exec(function(error,posts){
         if(error){console.log('error in finding post to print',error);return;}
         return res.render('home',{
-            title : 'Home',
+            title : 'codeComm | Home',
             posts: posts
         });
-    })
+    });
 }

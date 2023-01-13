@@ -1,4 +1,6 @@
-#all-posts li {
-  border: 1px solid yellow;
-  background-color: #dad5d5;
-  margin: 1%; }
+#all-posts ul {
+  list-style-type: circle; }
+  #all-posts ul li {
+    border: 1px solid yellow;
+    background-color: #dad5d5;
+    margin: 1%; }
