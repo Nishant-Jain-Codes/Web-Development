@@ -1,37 +1,34 @@
 <link rel="stylesheet" href="/css/home.css">
-<h1>this is codeComm a community of coders </h1>
-<h3>this is the <%=title%> page</h3>
 
-<section id="feed-posts">
-    <h4>
-        Posts
-    </h4>
-    
-    <% if(locals.user){ %>
-    <h5>create Post</h5>
-    <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" cols="30" rows="3" placeholder="Type Here...." required></textarea>
-        <input type="submit" value="Post">
-    </form>
-    <%}%>
-    <h5>all Posts</h5>
-    <div id="all-posts">
-        <ul>
-            <% for( let post of  locals.all_posts){ %>
-                <%- include('partials/_post',{post: post}); %>
-            <%}%>
+<div id="home-container">
+    <section id="feed-section">
+        <h4 class="home-section-heading">
+            Posts
+        </h4>
+        
+        <% if(locals.user){ %>
+            <div id="create-post">
+                <form action="/posts/create" id="new-post-form" method="POST">
+                    <textarea name="content" cols="30" rows="3" placeholder="Type Here...." required></textarea>
+                    <input type="submit" value="Create Post">
+                </form>
+            </div>
+        <%}%>
+        
+        <div id="all-posts">
+            <ul>
+                <% for( let post of  locals.all_posts){ %>
+                    <%- include('partials/_post',{post: post}); %>
+                <%}%>
+            </ul>
+        </div>
+    </section>
+    <section id="friends-section">
+        <h4 class="home-section-heading">friends</h4>
+        <ul id="friend-container">
+            <% for(let friend of locals.all_users){ %>
+               <%- include('partials/_friend',{friend:friend}) %>
+            <% } %>
         </ul>
-    </div>
-</section>
-<section id="user_friends">
-    <h4>friends</h4>
-    <ul>
-        <% for(let u of locals.all_users){ %>
-            <li>
-                <p>
-                    <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
-                </p>
-            </li>
-        <% } %>
-    </ul>
-</section>
+    </section>
+</div>

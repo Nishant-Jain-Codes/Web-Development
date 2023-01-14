@@ -1,5 +1,16 @@
 <h1> codeComm / User / profile</h1>
-<ul>
-    <li>Hi <%=profile_user.name%></li>
-    <li>your mail id : <%=profile_user.email%></li>
-</ul>
+
+<!-- if user matches show the profile update form -->
+<!-- else show only the profile details -->
+<% if(user.id == profile_user.id) {%>
+    <form action="/users/update/<%=profile_user.id%>" method="POST">
+        <input type="text" name="name" placeholder="your name" value="<%=profile_user.name%>" required>
+        <input type="email" name="email" placeholder="your Email" value="<%=profile_user.email%>" required>
+        <input type="submit" value="Update">
+    </form>
+<%}else{%>
+    <ul>
+        <li>Hi <%=profile_user.name%></li>
+        <li>your mail id : <%=profile_user.email%></li>
+    </ul>
+<%}%>    
