@@ -33,8 +33,7 @@
       margin-top: 2%;
       font-size: larger;
       font-weight: 100;
-      color: rgba(98, 90, 90, 0.8);
-      text-justify: distribute; }
+      color: rgba(98, 90, 90, 0.8); }
   .single-post-container .post-comments-container {
     width: 35%;
     border-radius: 15px;
