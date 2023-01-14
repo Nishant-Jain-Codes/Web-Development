@@ -1,0 +1,16 @@
+.single-post-container {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+  margin-top: 1%;
+  margin-bottom: 1%; }
+  .single-post-container .post-data {
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column; }
+    .single-post-container .post-data .userInfo-and-Delete {
+      display: flex;
+      justify-content: space-evenly; }
+  .single-post-container .post-comments-container {
+    width: 30%; }

@@ -1,0 +1,22 @@
+.single-post-container{
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    margin: {
+        top: 1%;
+        bottom: 1%;
+    }
+    .post-data{
+        width: 70%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        .userInfo-and-Delete {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+    .post-comments-container{
+        width: 30%;
+    }
+}
