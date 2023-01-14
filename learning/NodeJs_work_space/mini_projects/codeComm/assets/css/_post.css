@@ -1,16 +1,42 @@
 .single-post-container {
   display: flex;
+  justify-content: space-evenly;
   width: 100%;
-  border: 1px solid red;
   margin-top: 1%;
   margin-bottom: 1%; }
   .single-post-container .post-data {
-    width: 70%;
+    width: 60%;
     display: flex;
     align-items: flex-start;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 1%;
+    background-color: #f59f43;
+    border-radius: 15px;
+    margin-right: 0.5%; }
     .single-post-container .post-data .userInfo-and-Delete {
       display: flex;
-      justify-content: space-evenly; }
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 0.5%;
+      margin-bottom: 1.5%;
+      border-bottom: 2px dashed black; }
+      .single-post-container .post-data .userInfo-and-Delete h1 {
+        font-size: medium;
+        color: black;
+        font-family: cursive; }
+      .single-post-container .post-data .userInfo-and-Delete a {
+        font-size: larger;
+        text-decoration: none;
+        color: red; }
+    .single-post-container .post-data .post-content {
+      margin-top: 2%;
+      font-size: larger;
+      font-weight: 100;
+      color: rgba(98, 90, 90, 0.8);
+      text-justify: distribute; }
   .single-post-container .post-comments-container {
-    width: 30%; }
+    width: 35%;
+    border-radius: 15px;
+    padding: 1%;
+    background-color: #f59f43; }
