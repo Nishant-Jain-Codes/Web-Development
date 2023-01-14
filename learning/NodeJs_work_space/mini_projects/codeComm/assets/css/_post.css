@@ -13,7 +13,7 @@
     background-color: #f59f43;
     border-radius: 15px;
     margin-right: 0.5%; }
-    .single-post-container .post-data .userInfo-and-Delete {
+    .single-post-container .post-data .postDelete-userInfo {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -21,11 +21,11 @@
       margin-top: 0.5%;
       margin-bottom: 1.5%;
       border-bottom: 2px dashed black; }
-      .single-post-container .post-data .userInfo-and-Delete h1 {
+      .single-post-container .post-data .postDelete-userInfo h1 {
         font-size: medium;
         color: black;
         font-family: cursive; }
-      .single-post-container .post-data .userInfo-and-Delete a {
+      .single-post-container .post-data .postDelete-userInfo a {
         font-size: larger;
         text-decoration: none;
         color: red; }

@@ -23,7 +23,7 @@ $light-color: #EEEEEE;
             right: 0.5%;
         }
         // border: 2px solid green;
-        .userInfo-and-Delete {
+        .postDelete-userInfo {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,13 +46,13 @@ $light-color: #EEEEEE;
             border-bottom: 2px dashed black;
             
         }
-    .post-content{
-        margin-top: 2%;
-        font-size: larger;
-        font-weight: 100;
-        font-family:'Times New Roman', Times, serif;
-        color: rgba(98, 90, 90,0.8);
-    }
+        .post-content{
+            margin-top: 2%;
+            font-size: larger;
+            font-weight: 100;
+            font-family:'Times New Roman', Times, serif;
+            color: rgba(98, 90, 90,0.8);
+        }
     }
     .post-comments-container{
         width: 35%;

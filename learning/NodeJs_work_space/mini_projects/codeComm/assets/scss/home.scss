@@ -93,6 +93,7 @@ $light-color: #EEEEEE;
         background-color: $right-side-color;
         border-radius: 10px;
         #friend-container{
+            width: 100%;
             margin-top: 3%;
             display: flex;
             flex-direction: column;

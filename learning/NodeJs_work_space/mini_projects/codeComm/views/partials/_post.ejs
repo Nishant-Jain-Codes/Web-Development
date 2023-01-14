@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../css/_post.css">
 <li class="single-post-container">
     <div class="post-data">
-        <div class="userInfo-and-Delete">
+        <div class="postDelete-userInfo">
             <h1><%=post.user.name%></h1>  
             <% if(locals.user && locals.user.id == post.user.id){ %>
                 <a class="delete-post" href="/posts/destroy/<%=post._id%>">
