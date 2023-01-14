@@ -8,10 +8,12 @@ module.exports.user = function(req,res){
 }
 
 module.exports.profile = function(req,res){
-
-    return res.render('user_profile',{
-        user: req.user,
-        title: "codeComm | Users ->Profile"
+    User.findById(req.params.id,function(error,user){
+        if(error){console.log('error in finding user',error);return;}
+        return res.render('user_profile',{
+            title : 'codeComm | User-Profile',
+            profile_user: user
+        });
     });
 }
 //set up sign up action

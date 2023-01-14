@@ -6,7 +6,7 @@ router.get('/',usersController.user);
 router.get('/sign-in',usersController.signIn);
 router.get('/sign-up',usersController.signUp);
 router.get('/sign-out',usersController.destroySession);
-router.get('/profile',passport.checkAuthentication,usersController.profile);
+router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
 router.post('/create',usersController.create);
 //use passport as a middle ware to authenticate
 router.post('/create-session',passport.authenticate(

@@ -17,9 +17,21 @@
     <h5>all Posts</h5>
     <div id="all-posts">
         <ul>
-            <% for( let post of  locals.posts){ %>
+            <% for( let post of  locals.all_posts){ %>
                 <%- include('partials/_post',{post: post}); %>
             <%}%>
         </ul>
     </div>
+</section>
+<section id="user_friends">
+    <h4>friends</h4>
+    <ul>
+        <% for(let u of locals.all_users){ %>
+            <li>
+                <p>
+                    <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
+                </p>
+            </li>
+        <% } %>
+    </ul>
 </section>

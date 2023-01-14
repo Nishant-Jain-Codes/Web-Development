@@ -8,25 +8,29 @@ footer{
     justify-content: space-between;
     align-items: center;
     #footer-title{
-        display: flex;
-        align-items: center;
-        margin: {
-            left:1vw;
-        }
-        i{
+        a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: $light-color;
             margin: {
-                left: 0.1vw;
-                right: 0.1vw;
+                left:1vw;
             }
-            font: {
-                size: 10px;
+            i{
+                margin: {
+                    left: 0.1vw;
+                    right: 0.1vw;
+                }
+                font: {
+                    size: 10px;
+                }
+                opacity: 0.6;
             }
-            opacity: 0.6;
-        }
-        h1{
-            font: {
-                family: cursive,helvetica;
-                size: 25px;
+            h1{
+                font: {
+                    family: cursive,helvetica;
+                    size: 25px;
+                }
             }
         }
     }

@@ -5,14 +5,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  header #header-title {
+  header #header-title a {
     display: flex;
-    align-items: center; }
-    header #header-title i {
+    align-items: center;
+    text-decoration: none;
+    color: #EEEEEE; }
+    header #header-title a i {
       margin-left: 1vw;
       margin-right: 1vw;
       font-size: 30px; }
-    header #header-title h1 {
+    header #header-title a h1 {
       font-family: cursive,helvetica;
       font-size: 25px; }
   header #header-links {
