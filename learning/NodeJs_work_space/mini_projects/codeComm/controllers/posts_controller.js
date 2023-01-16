@@ -8,14 +8,19 @@ module.exports.posts = function(req,res){
 module.exports.analytics = function(req,res){
     return res.end('<h1>posts - analytics page</h1>');
 }
-module.exports.create = function(req,res){
-    Post.create({
-        content: req.body.content,
-        user: req.user._id
-    },function(error,post){
-        if(error){console.log('error in creating post',error);return ;}
+module.exports.create = async function(req,res){
+    try{
+        let post = await Post.create({
+            content: req.body.content,
+            user: req.user._id
+        });
         return res.redirect('back');
-    });
+
+    }catch(error){
+        console.log('error in creating post',error);
+        return ;
+    }
+    
 }
 module.exports.destroy = function(req,res){
     Post.findById(req.params.id,function(error,post){
