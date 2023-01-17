@@ -57,25 +57,26 @@ module.exports.destroySession = function(req,res){
     
 }
 //get the sign up data
-module.exports.create = function(req,res){
+module.exports.create = async function(req,res){
    if(req.body.password != req.body.confirm_password)
    {
         return res.redirect('back');
    }
    //find if the user exists through its email
-   User.findOne({email: req.body.email},function(error,user){
-    if(error){console.log('error in finding user while signing up');return;}
-    //if user doesn't exist create it
-    if(!user){
-        User.create(req.body,function(error,user){
-            if(error){console.log('error in creating user while signing up');return;}
+   try{
+        let user = await User.findOne({email: req.body.email});
+        if(!user){
+            await User.create(req.body);
             return res.redirect('/users/sign-in');
-        });
+        }
+        else{
+            return res.redirect('back');
+        }
+    }catch(error){
+        console.log('error in creating user' , error);
+        return ;
     }
-    else{
-        return res.redirect('back');
-    }
-   });
+
 }
 //action for create session / logging in
 module.exports.createSession = function(req,res){

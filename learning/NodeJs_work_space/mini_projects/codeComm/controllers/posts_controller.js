@@ -10,7 +10,7 @@ module.exports.analytics = function(req,res){
 }
 module.exports.create = async function(req,res){
     try{
-        let post = await Post.create({
+        await Post.create({
             content: req.body.content,
             user: req.user._id
         });
@@ -22,19 +22,19 @@ module.exports.create = async function(req,res){
     }
     
 }
-module.exports.destroy = function(req,res){
-    Post.findById(req.params.id,function(error,post){
-        if(error){console.log('error in finding post to delete',error);return;}
-        if(post.user == req.user.id)//.id means converting the object id to string
+module.exports.destroy = async function(req,res){
+    
+    try{
+        let post = await Post.findById(req.params.id);
+        if(post.user==req.user.id)
         {
             post.remove();
-            Comment.deleteMany({post: req.params.id},function(error){
-                if(error){console.log('error in deleting comments of the post',error);return;}
-                return res.redirect('back');
-            });
+            await Comment.deleteMany({post: req.params.id});
         }
-        else {
-            res.redirect('back');
-        }
-    });
+        return res.redirect('back');
+    }catch(error){
+        console.log('error in destroying post ',error);
+        return;
+    }
+
 }
