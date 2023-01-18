@@ -46,16 +46,6 @@ module.exports.signIn = function(req,res){
         title: "codeComm | Sign Ip"
     })
 }
-module.exports.destroySession = function(req,res){
-    req.logout(function(error){
-        if(error){
-            console.log('error in logging out ',error);
-            return ;
-        }
-        return res.redirect('/');
-    });
-    
-}
 //get the sign up data
 module.exports.create = async function(req,res){
    if(req.body.password != req.body.confirm_password)
@@ -80,5 +70,12 @@ module.exports.create = async function(req,res){
 }
 //action for create session / logging in
 module.exports.createSession = function(req,res){
+    req.flash('success','Logged in Successfully');//setting up flash object in request object object.flash('type','message')
     return res.redirect('/');
 }
+module.exports.destroySession = function(req,res){
+        req.logout();
+            req.flash('success','Logged out Successfully');
+        return res.redirect('/');
+};
+    

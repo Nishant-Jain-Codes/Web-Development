@@ -11,6 +11,7 @@ const MongoStore = require('connect-mongo');
 const app = express();
 const port = 8000;
 const sassMiddleware = require('node-sass-middleware');
+const flash = require('connect-flash');
 //middleware to convert scss to css
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -50,6 +51,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use(flash());
 // * routing the home url to all the further url 
 app.use('/',require('./routes'));
 app.listen(port,function(error){
