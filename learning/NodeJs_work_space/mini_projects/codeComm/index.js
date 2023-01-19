@@ -12,6 +12,7 @@ const app = express();
 const port = 8000;
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
+const customMiddleWare = require('./config/middleware');
 //middleware to convert scss to css
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -52,6 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 app.use(flash());
+app.use(customMiddleWare.setFlash);
 // * routing the home url to all the further url 
 app.use('/',require('./routes'));
 app.listen(port,function(error){

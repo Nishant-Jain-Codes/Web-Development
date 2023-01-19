@@ -73,8 +73,12 @@ module.exports.createSession = function(req,res){
     req.flash('success','Logged in Successfully');//setting up flash object in request object object.flash('type','message')
     return res.redirect('/');
 }
-module.exports.destroySession = function(req,res){
-        req.logout();
+module.exports.destroySession = async function(req,res){
+        await req.logout(function(error){
+            console.log(error);
+            //return res.redirect('/');
+
+        });
             req.flash('success','Logged out Successfully');
         return res.redirect('/');
 };
