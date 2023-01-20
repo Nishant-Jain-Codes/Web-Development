@@ -12,11 +12,11 @@ module.exports.create = async function(req,res){
             });
             post.comments.push(comment);
             post.save();//save after updating the database
+            req.flash('success','comment posted');
         }
         return res.redirect('back');
         
     }catch(error){
-        console.log('error in creating comment',error);
         return;
     }
     
@@ -28,11 +28,11 @@ module.exports.destroy = async function(req,res){
             let postId = comment.post;
             comment.remove();
             await Post.findByIdAndUpdate(postId,{$pull:{comments: req.params.id}});
+            req.flash('success','comment deleted');
         }
         return res.redirect('back');
         
     }catch(error){
-        console.log('error in destroying comment',error);
         return ;
     }
     
