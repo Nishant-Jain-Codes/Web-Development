@@ -43,13 +43,14 @@ module.exports.signIn = function(req,res){
        return res.redirect('/users/profile');
     }
     return res.render('user_sign_in',{
-        title: "codeComm | Sign Ip"
+        title: "codeComm | Sign In"
     })
 }
 //get the sign up data
 module.exports.create = async function(req,res){
    if(req.body.password != req.body.confirm_password)
    {
+        req.flash('error',"passwords doesn't match");
         return res.redirect('back');
    }
    //find if the user exists through its email
