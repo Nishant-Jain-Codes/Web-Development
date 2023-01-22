@@ -1,7 +1,19 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts'); 
+const sassMiddleware = require('node-sass-middleware');
+const bodyParser = require('body-parser');
 const port = 8000;
 const app = express();
+app.use(sassMiddleware({
+    src: './assets/sass',
+    dest: './assets/css',
+    debug: true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.set(express.static('./assets'))
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
