@@ -3,7 +3,7 @@ const PassportLocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 //authentication
-passport.user(new PassportLocalStrategy({
+passport.use(new PassportLocalStrategy({
     usernameField: 'email',
     passReqToCallback: true
     },

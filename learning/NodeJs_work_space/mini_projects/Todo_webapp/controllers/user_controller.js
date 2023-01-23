@@ -1,4 +1,4 @@
-const User = require("../../codeComm/models/user");
+const User = require("../models/user");
 
 //redirects to user data page
 module.exports.user = function(req,res){
@@ -43,7 +43,7 @@ module.exports.create = async function(req,res){
 }
 module.exports.createSession = function(req,res){
     req.flash('success',`user ${req.body.name} signed in`);
-    return res.redirect('home')
+    return res.redirect('/')
 }
 module.exports.destroySession = function(req,res){
     req.logout(function(error){

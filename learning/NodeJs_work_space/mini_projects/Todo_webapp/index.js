@@ -3,6 +3,7 @@ const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const passportLocalStratergy = require('./config/passport-local-strategy');
 const session = require('express-session');
 const cookieParser = require('cookie-parser')
 const MongoStore = require('connect-mongo');
