@@ -10,21 +10,18 @@ module.exports.user = function(req,res){
 //sign up a new user ==> create
 module.exports.create = async function(req,res){
     if(req.body.password != req.body.confirm_password){
-        //TODO: show a flash message
-        // req.flash('error',"passwords doesn't match");
+        req.flash('error',"passwords doesn't match");
         return res.redirect('back');
     }
     try{
         let user = await User.findOne({email: req.body.email});
         if(user)
         {
-            //TODO: show a flash message
-            // req.flash('error',"user already exists");
+            req.flash('error',"user already exists");
             return res.redirect('back');
         }
         else{
-            //TODO: show a flash message
-            // req.flash('success',`user: ${req.body.name} created`);
+            req.flash('success',`user: ${req.body.name} created`);
             await User.create(req.body);
             return res.redirect('/user/sign-in');
         }
@@ -34,6 +31,15 @@ module.exports.create = async function(req,res){
         return;
     }
 }
-module.exports.createSession = async function(req,res){
-    //TODO handel create session by passport js and setting up passport authentication
+module.exports.createSession = function(req,res){
+    req.flash('success',`user ${req.body.name} signed in`);
+    return res.redirect('home')
+}
+module.exports.destroySession = function(req,res){
+    req.logout(function(error){
+        if(!error){
+            req.flash('success','Logged out Successfully');
+            return res.redirect('/');
+        }
+    });
 }
