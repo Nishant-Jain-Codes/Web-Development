@@ -1,0 +1,36 @@
+header {
+  height: 75px;
+  background-color: #F55050;
+  color: #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header #header-title a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #EEEEEE; }
+    header #header-title a i {
+      margin-left: 1vw;
+      margin-right: 1vw;
+      font-size: 30px; }
+    header #header-title a h1 {
+      font-family: cursive,helvetica;
+      font-size: 25px; }
+  header #header-links {
+    display: flex;
+    align-items: center;
+    list-style: none; }
+    header #header-links li {
+      margin-left: 1vw;
+      margin-right: 1vw;
+      font-family: cursive,helvetica;
+      font-size: 15px; }
+      header #header-links li #user-details {
+        font-size: 20px; }
+      header #header-links li a {
+        color: #EEEEEE;
+        text-decoration: none;
+        transition: font-weight 0.2s ease-in-out; }
+      header #header-links li a:hover {
+        font-weight: bolder; }

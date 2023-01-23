@@ -1,3 +1,30 @@
 <header>
-    
+    <div id="header-title">
+        <a href="/">
+            <i class="fa-solid fa-list"></i>
+            <h1>To.Do</h1>
+            <i class="fa-solid fa-check-double"></i>
+        </a>
+    </div>
+
+    <ul id="header-links">
+        <%if(locals.user){%>
+            <li>
+                <a href="/user/profile" id="user-details">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <%=user.name%>
+                </a>
+            </li>
+            <li>
+                <a href="/user/sign-out">Sign Out</a>
+            </li>
+        <%}else{%>
+            <li>
+                <a href="/user/sign-in">Sign In</a>
+            </li>
+            <li>
+                <a href="/user/sign-up">Sign Up</a>
+            </li>
+        <%}%>
+    </ul>
 </header>
