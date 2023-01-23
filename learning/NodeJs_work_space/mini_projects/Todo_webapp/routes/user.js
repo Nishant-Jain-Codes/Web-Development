@@ -5,6 +5,7 @@ router.get('/',usersController.user);
 // router.get('/sign-in',usersController.sign_in);
 // router.get('/sign-up',usersController.sign_up);
 // router.get('/sign-out',usersController.sign_out);
+router.get('/create',usersController.create);
 
 
 module.exports = router;
