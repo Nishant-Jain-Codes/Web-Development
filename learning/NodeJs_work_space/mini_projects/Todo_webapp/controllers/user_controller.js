@@ -1,4 +1,3 @@
-const { model } = require("mongoose");
 const User = require("../../codeComm/models/user");
 
 //redirects to user data page
@@ -7,7 +6,18 @@ module.exports.user = function(req,res){
         title: "ToDo | user"
     })
 }
-//sign up a new user ==> create
+//redirecting to sign in and sign up pages
+module.exports.sign_in = function(req,res){
+    return res.render('user_sign_in',{
+        title: 'To.Do | SIGN IN'
+    })
+}
+module.exports.sign_up = function(req,res){
+    return res.render('user_sign_up',{
+        title: 'To.Do | SIGN UP'
+    })
+}
+//creating and deleting sessions
 module.exports.create = async function(req,res){
     if(req.body.password != req.body.confirm_password){
         req.flash('error',"passwords doesn't match");

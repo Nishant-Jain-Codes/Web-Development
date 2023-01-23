@@ -30,7 +30,8 @@ app.set('view engine','ejs');
 app.set('views','./views')
 app.use(session({
     name: 'To.Do',
-    secret: 'somesecrettextblablablabla',
+    //TODO: change the secret before deployment
+    secret: 'asdufhaskdfhaskfjhaskjfhqou1971210201sd8',
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -40,7 +41,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(passport.setAuthenticatedUser);
+app.use(passport.setAuthenticatedUser);//some error here //!TypeError: app.use() requires a middleware function
 app.use(flash());
 app.use(customMW_flash.setFlash);
 app.use('/',require('./routes'));

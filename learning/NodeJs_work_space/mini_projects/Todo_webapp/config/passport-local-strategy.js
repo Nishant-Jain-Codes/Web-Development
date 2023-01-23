@@ -11,8 +11,7 @@ passport.user(new PassportLocalStrategy({
         try{
             let user = await User.findOne({email:email});
             if(!user || password != user.password){
-                //TODO : flash message
-                // req.flash('error','Invalid Mail-Id/Password');
+                req.flash('error','Invalid Mail-Id/Password');
                 return done(null,false)
             }
             else{
@@ -40,12 +39,11 @@ passport.checkAuthentication = function(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
-    else
-    {
+    else{
         return res.redirect('/user/sign-in');
     }
 }
-passport.setAuthentication = function(req,res,next){
+passport.setAuthenticatedUser = function(req,res,next){
     if(req.isAuthenticated()){
         res.locals.user = req.user;
     }
