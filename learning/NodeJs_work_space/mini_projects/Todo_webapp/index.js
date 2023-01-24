@@ -17,13 +17,13 @@ app.use(sassMiddleware({
     dest: './assets/css',
     debug: true,
     outputStyle: 'extended',
-    prefix: '/assets/css'
+    prefix: '/css'
 }));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
-app.set(express.static(__dirname + './assets'))
+app.use(express.static('./assets'));
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 app.use(expressLayouts);
