@@ -9,7 +9,7 @@ module.exports.tasklist = async function(req,res){
         let all_tasks = await Task.find({user:req.user._id})
         .populate('user')
         .populate('tag');
-        let all_tags = await Tag.find({ user:req.user._id})
+        let all_tags = await Tag.find({user:req.user._id})
         .populate('user');
         return res.render('tasklist',{
             title: 'To.Do | tasklist',

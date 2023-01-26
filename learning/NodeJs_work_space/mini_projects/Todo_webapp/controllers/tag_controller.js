@@ -16,3 +16,9 @@ module.exports.create = async function(req,res){
         return;
     }
 }
+module.exports.destroy = async function(req,res){
+
+}
+module.exports.update = async function(req,res){
+
+}

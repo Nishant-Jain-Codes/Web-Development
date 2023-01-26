@@ -31,7 +31,7 @@
         <p>you have no tasks pending</p>
     <%}else{%>
         <ul>
-            <%for(let task of all_task){%>
+            <%for(let task of all_tasks){%>
                 <li>
                     <%=task.detail%>
                     <a href="/tasklist/task/destroy/<%=task._id%>"><i class="fa-solid fa-eraser"></i></a>

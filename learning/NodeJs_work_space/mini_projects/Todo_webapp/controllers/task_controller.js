@@ -9,12 +9,19 @@ module.exports.create = async function(req,res){
             user: req.user,
             tag:req.body.tag, 
         });
-        user.tasks.push(task);
-        user.save();
+        req.user.tasks.push(task);
+        req.user.save();
         req.flash('success','task added');
         return res.redirect('back');
     }catch(error){
         req.flash('error','error - task create');
+        console.log('error in creating task', error)
         return;
     }
+}
+module.exports.destroy = async function(req,res){
+
+}
+module.exports.update = async function(req,res){
+
 }
