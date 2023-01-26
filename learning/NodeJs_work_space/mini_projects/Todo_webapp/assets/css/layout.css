@@ -1,8 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-  outline: green solid 3px; }
+  padding: 0; }
 
 #layout_body {
-  height: 100vh;
-  display: flex; }
+  height: 100vh; }

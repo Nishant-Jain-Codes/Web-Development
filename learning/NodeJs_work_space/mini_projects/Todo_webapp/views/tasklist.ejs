@@ -1,7 +1,9 @@
-<link rel="stylesheet" href="/css/_createTask">
-<section id="tasklist-create">
-    <%-include('partials/_createTask.ejs',{all_tags:all_tags})%>
-</section>
-<section id="tasklist-view">
-    <%-include('partials/_showTask.ejs',{all_tasks:all_tasks})%>
-</section>
+<link rel="stylesheet" href="/css/tasklist.css">
+<div id="tasklist">
+    <section id="tasklist-create">
+        <%-include('partials/_createTask.ejs',{all_tags:all_tags})%>
+    </section>
+    <section id="tasklist-view">
+        <%-include('partials/_showTask.ejs',{all_tasks:all_tasks})%>
+    </section>
+</div>
