@@ -42,7 +42,7 @@ module.exports.create = async function(req,res){
     }
 }
 module.exports.createSession = function(req,res){
-    req.flash('success',`user ${req.body.name} signed in`);
+    req.flash('success',`user signed in`);
     return res.redirect('/')
 }
 module.exports.destroySession = function(req,res){

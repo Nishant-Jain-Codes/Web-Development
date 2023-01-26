@@ -18,6 +18,12 @@ const userSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'task'
         }
+    ],
+    tags: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'tag'
+        }
     ]
 },{
     timestamps: true

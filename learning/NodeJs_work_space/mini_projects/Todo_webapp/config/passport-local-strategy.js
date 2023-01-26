@@ -40,6 +40,7 @@ passport.checkAuthentication = function(req,res,next){
         return next();
     }
     else{
+        req.flash('error',"You are not signed in");
         return res.redirect('/user/sign-in');
     }
 }
