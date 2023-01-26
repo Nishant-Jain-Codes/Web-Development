@@ -1,0 +1,14 @@
+<%if(all_tasks.length==0){%>
+    <p>you have no tasks pending</p>
+<%}else{%>
+    <ul>
+        <%for(let task of all_tasks){%>
+            <li>
+                <%=task.detail%>
+                <a href="/tasklist/task/destroy/<%=task._id%>"><i class="fa-solid fa-delete-left"></i></a>
+                <!-- TODO add update functionality -->
+                <!-- <a href="/tasklist/task/update/<%=task._id%>"><i class="fa-solid fa-pen-to-square"></i></a> -->
+            </li>
+        <%}%>
+    </ul>
+<%}%>

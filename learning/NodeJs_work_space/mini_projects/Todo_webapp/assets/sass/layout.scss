@@ -1,7 +1,9 @@
-body{
+*{
     margin: 0;
     padding: 0;
+    outline: green solid 3px;
 }
 #layout_body{
     height: 100vh;
+    display: flex;
 }

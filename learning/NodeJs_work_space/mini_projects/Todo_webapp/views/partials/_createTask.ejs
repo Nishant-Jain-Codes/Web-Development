@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/_createTask">
+<div id="create-task">
+    <form action="/tasklist/task/create" method="post">
+        <input type="text" name="detail" placeholder="Task Description" required>        
+        <input type="date" name="due" required>        
+        <select name="tag" required>
+                <option value="disabled option" disabled selected>
+                    add / create tag
+                </option>
+            <%if(all_tags.length>0) {%>
+                <%for(let tag of all_tags){%>
+                    <option value="<%=tag._id%>">
+                        <%=tag.name%>
+                    </option>
+                <%}%>
+            <%}%>
+        </select>
+        <input type="submit" value="create task">
+    </form>
+</div>
+<div id="create-tag">
+    <form action="/tasklist/tag/create" method="post">
+        <input type="text" name="name" placeholder="Tag Name" required>
+        <input type="submit" value="create Tag">
+    </form>
+</div>

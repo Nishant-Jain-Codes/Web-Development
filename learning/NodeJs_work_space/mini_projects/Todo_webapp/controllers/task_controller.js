@@ -20,8 +20,24 @@ module.exports.create = async function(req,res){
     }
 }
 module.exports.destroy = async function(req,res){
-
+    try{
+        console.log(req.user)
+        let task = await Task.findById(req.params.id);
+        if(task.user== req.user.id){
+            req.flash('success','task deleted');
+            task.remove();
+            req.user.update(
+                {_id:req.user.id},
+                {$pull:{'tasks': req.params.id}}
+            );
+        }
+        return res.redirect('back');
+    }catch(error){
+        console.log('error in deleting task',error);
+        return ;
+    }
 }
-module.exports.update = async function(req,res){
+// TODO add update functionality
+// module.exports.update = async function(req,res){
 
-}
+// }
