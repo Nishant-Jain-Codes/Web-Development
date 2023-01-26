@@ -9,6 +9,10 @@ const taskSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
     tag: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'tag'
@@ -28,5 +32,5 @@ const taskSchema = new mongoose.Schema({
 },{
     timestamps: true
 });
-const Task = mongoose.model('Task',taskSchema);
+const Task = mongoose.model('task',taskSchema);
 module.exports = Task;
