@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
-
+<link rel="stylesheet" href="../css/_post.css">
+<link rel="stylesheet" href="../css/_comment.css">
 <div id="home-container">
     <section id="feed-section">
         <h4 class="home-section-heading">
@@ -17,6 +18,7 @@
         
         <div id="all-posts">
             <ul>
+                <!-- also insert css for posts -->
                 <% for( let post of  locals.all_posts){ %>
                     <%- include('partials/_post',{post: post}); %>
                 <%}%>

@@ -15,6 +15,7 @@ module.exports.create = async function(req,res){
             user: req.user._id
         });
         if(req.xhr){
+            //wer return json with a status
             return res.status(200).json({
                 data: {
                     post: post
@@ -35,12 +36,22 @@ module.exports.destroy = async function(req,res){
     
     try{
         let post = await Post.findById(req.params.id);
-        if(post.user==req.user.id)
+        console.log('post',post);
+        if( post.user==req.user.id)
         {           
             req.flash('success','post deleted');
             post.remove();
             await Comment.deleteMany({post: req.params.id});
-        }
+            if(req.xhr){
+                console.log('post deleted');
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: 'post deleted'
+                });
+            }
+        }        
         return res.redirect('back');
     }catch(error){
         console.log('error in destroying post ',error);
