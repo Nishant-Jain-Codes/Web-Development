@@ -14,6 +14,7 @@ module.exports.create = async function(req,res){
             content: req.body.content,
             user: req.user._id
         });
+        post = await Post.findById(post._id).populate('user');
         if(req.xhr){
             //wer return json with a status
             return res.status(200).json({

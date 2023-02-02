@@ -1,3 +1,4 @@
+
 {
     //method to submit the form data for new post using AJAX
     let createPost = function(){
@@ -34,13 +35,13 @@
         </div>
         <div class="post-comments-container">
                 <div class="create-comment">
-                    <form action="/comments/create" method="POST">
+                    <form action="/comments/create" class="new-comment-form" method="POST">
                         <textarea  name="content" placeholder="comment here" required></textarea>
                         <input type="hidden" name="post" value="${post._id}" >
                         <input type="submit" value="Add Comment">
                     </form>
                 </div>
-                <div class="post-comments">
+                <div class="post-comments" id="all-comments-${post._id}">
                     <ul>
 
                     </ul>
@@ -66,9 +67,5 @@
             });
         });
     }
-
-
-
-
     createPost();
 }
