@@ -1,4 +1,9 @@
 
+    // !ajax not working properly for comments as well as posts
+    // after server restarts the ajax property turns useless for old posts
+    // comment summit is returning an array of content from the comment box of all the posts since we selected the create comment class and not a unique id
+    //! solving of these bugs is necessary
+
 { 
  //method to submit the form data for new comment using AJAX
     let createComment = function(){
