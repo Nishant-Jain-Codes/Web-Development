@@ -11,17 +11,19 @@ module.exports.create = async function(req,res){
                 user: req.user._id
             });
             comment = await Comment.findById(comment._id).populate('post').populate('user');
+            //save after updating the database
+            post.comments.push(comment);
+            post.save();
             if(req.xhr){
+                console.log('xhr comment req')
+                req.flash('success','comment posted');
                 return res.status(200).json({
                     data: {
                         comment: comment
                     },
                     message: 'Comment Created'
                 });
-            }
-            post.comments.push(comment);
-            post.save();//save after updating the database
-            req.flash('success','comment posted');
+            }          
         }
         return res.redirect('back');
         

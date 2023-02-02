@@ -16,7 +16,8 @@ module.exports.create = async function(req,res){
         });
         post = await Post.findById(post._id).populate('user');
         if(req.xhr){
-            //wer return json with a status
+            //wer return json with a status\
+            req.flash('success','post created');
             return res.status(200).json({
                 data: {
                     post: post
@@ -24,7 +25,6 @@ module.exports.create = async function(req,res){
                 message: "Post created!"
             });
         }
-        req.flash('success','post created');
         return res.redirect('back');
 
     }catch(error){
