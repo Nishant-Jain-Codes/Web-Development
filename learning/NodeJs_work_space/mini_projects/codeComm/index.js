@@ -27,6 +27,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 //telling app to where to lookout for static files
 app.use(express.static('./assets'));
+//making the uploads folder accessable to the browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 //put style and script from sub pages to their destined location 
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
