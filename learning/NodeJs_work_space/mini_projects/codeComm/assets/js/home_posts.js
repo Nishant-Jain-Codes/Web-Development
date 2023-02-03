@@ -1,5 +1,7 @@
 
 {
+    //TODOcomplete comment ajax
+    //TODOwork on inconsistency in post deletion and cotenant deletion 
     //method to submit the form data for new post using AJAX
     let createPost = function(){
         let newPostForm = $('#new-post-form');
