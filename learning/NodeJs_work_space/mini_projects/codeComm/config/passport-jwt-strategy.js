@@ -9,7 +9,7 @@ let opts = {
     //heder has a key called authorization 
     // tha key have a key called bearer which have the jwt token
     jwtFromRequest : ExtractJWT.fromAuthHeaderAsBearerToken,
-    secretOrKey: 'codeComm',//some secret code acc to which the encryption and decryption of token occurs
+    secretOrKey: 'codeComm',//decryption key
 }
 //telling passport to use jwt strategy
 
