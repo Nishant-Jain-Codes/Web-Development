@@ -3,6 +3,13 @@
     //TODOcomplete comment ajax
     //TODOwork on inconsistency in post deletion and cotenant deletion 
     //method to submit the form data for new post using AJAX
+    let setUpPosts = function(){
+        let allPosts = $(' .single-post-container')
+        for(let post of allPosts){
+            deletePost($(`${post.id}> .delete-post`),post);
+        }
+    }
+
     let createPost = function(){
         let newPostForm = $('#new-post-form');
         newPostForm.submit(function(event){
@@ -129,6 +136,7 @@
             });
         });
     }
+    setUpPosts();
     createComment();
     createPost();
 }
