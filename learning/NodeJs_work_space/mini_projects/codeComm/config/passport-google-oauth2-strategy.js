@@ -14,7 +14,8 @@ passport.use(new googleStrategy({
         }
         
         console.log('google auth profile',profile)
-        
+        console.log('google auth access token',accessToken);
+        console.log('google auth refresh token',refreshToken);
         if(user){
             //if user found set this user as req.user
             return done(null,user);
@@ -34,3 +35,4 @@ passport.use(new googleStrategy({
         }
     });
 }));
+module.exports = passport;
