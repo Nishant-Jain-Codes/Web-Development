@@ -29,11 +29,19 @@
         font-size: larger;
         text-decoration: none;
         color: red; }
+      .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost i {
+          cursor: pointer; }
+        .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost div {
+          margin-right: 5%; }
     .single-post-container .post-data .post-content {
       margin-top: 2%;
       font-size: larger;
       font-weight: 100;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Times New Roman", Times, serif;
       color: rgba(98, 90, 90, 0.8); }
   .single-post-container .post-comments-container {
     width: 35%;
@@ -48,7 +56,7 @@
         border-radius: 10px;
         padding: 3%;
         margin-bottom: 0; }
-      .single-post-container .post-comments-container .create-comment input[type=submit] {
+      .single-post-container .post-comments-container .create-comment input[type="submit"] {
         width: 100%;
         background-color: #fca311;
         border: 2px solid rgba(0, 0, 0, 0.3);
@@ -57,7 +65,7 @@
         padding-bottom: 1%;
         transition: all 0.1s;
         cursor: pointer; }
-      .single-post-container .post-comments-container .create-comment input[type=submit]:hover {
+      .single-post-container .post-comments-container .create-comment input[type="submit"]:hover {
         background-color: green;
         letter-spacing: 1.8px;
         font-weight: 500;
