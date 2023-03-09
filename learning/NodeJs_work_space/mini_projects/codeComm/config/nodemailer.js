@@ -8,7 +8,7 @@
     secure: false,
     auth: {
         user: 'nishant.dev.test@gmail.com',
-        pass: 'tvwxkwbirxoukedb'
+        pass: 'gsjnlijgmhdooofq'
     }
  });
 
