@@ -33,10 +33,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center; }
-        .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost i {
-          cursor: pointer; }
         .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost div {
           margin-right: 5%; }
+        .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost .post-likes {
+          display: flex; }
+          .single-post-container .post-data .postDelete-userInfo .post-likes-deletePost .post-likes i {
+            cursor: pointer; }
     .single-post-container .post-data .post-content {
       margin-top: 2%;
       font-size: larger;

@@ -4,8 +4,8 @@
             <h1><%=post.user.name%></h1> 
             <div class="post-likes-deletePost">
             <% if(locals.user) {%>
-                <div>
-                    <!-- <p><%=post.likes%></p> -->
+                <div class="post-likes">
+                    <p><%=post.likes.length%></p>
                     <i class="fa-regular fa-thumbs-up"></i>
                 </div>
             <%}%>

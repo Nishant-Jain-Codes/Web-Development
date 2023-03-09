@@ -49,14 +49,18 @@ $light-color: #eeeeee;
         display: flex;
         justify-content: space-between;
         align-items: center;
-            i {
-                cursor: pointer;
-            }
+            
             div{
                 margin: { 
                     // left: 5%;
                     right: 5%;
                 };
+            }
+            .post-likes{
+              display: flex;
+              i {
+                cursor: pointer;
+              }
             }
         }
     }
