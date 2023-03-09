@@ -19,7 +19,7 @@
         data,
         function (err,template){
             if(err){
-                console.log('error in rendering template');
+                console.log('error in rendering template',err);
                 return ;
             }
             mailHTML = template;
