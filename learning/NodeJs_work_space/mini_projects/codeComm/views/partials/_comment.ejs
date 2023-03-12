@@ -4,6 +4,21 @@
             <h1>
                 <%=comment.user.name%>    
             </h1>
+            <div class="comment-likes-deleteComment">
+                <% if(locals.user) {%>
+                    <a href="/likes/toggle/?id=<%=comment._id%>&type=Comment" class = "toggle-like-button" data-likes=""<%=comment.likes.length%>>
+                        <div class="comment-likes">
+                            <p><%=comment.likes.length%></p>
+                            <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                    </a>
+                <%}%>
+                <% else{%>
+                    <div class="comment-likes">
+                        <p><%=comment.likes.length%></p>
+                        <i class="fa-regular fa-thumbs-up"></i>
+                    </div>
+                <%}%>
             <!-- also insert css of comment in the parent file -->
             <% if(locals.user && locals.user.id == comment.user.id){ %>
                 <a class="delete-comment" href="/comments/destroy/<%=comment._id%>">

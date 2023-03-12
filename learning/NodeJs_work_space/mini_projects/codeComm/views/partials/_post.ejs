@@ -4,6 +4,14 @@
             <h1><%=post.user.name%></h1> 
             <div class="post-likes-deletePost">
             <% if(locals.user) {%>
+                <a href="/likes/toggle/?id=<%=post._id%>&type=Post" class = "toggle-like-button" data-likes=""<%=post.likes.length%>>
+                    <div class="post-likes">
+                        <p><%=post.likes.length%></p>
+                        <i class="fa-regular fa-thumbs-up"></i>
+                    </div>
+                </a>
+            <%}%>
+            <% else{%>
                 <div class="post-likes">
                     <p><%=post.likes.length%></p>
                     <i class="fa-regular fa-thumbs-up"></i>
