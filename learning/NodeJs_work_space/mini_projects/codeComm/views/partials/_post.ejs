@@ -10,8 +10,7 @@
                         <i class="fa-regular fa-thumbs-up"></i>
                     </div>
                 </a>
-            <%}%>
-            <% else{%>
+            <%} else{%>
                 <div class="post-likes">
                     <p><%=post.likes.length%></p>
                     <i class="fa-regular fa-thumbs-up"></i>
@@ -31,7 +30,7 @@
     <div class="post-comments-container">
         <% if(locals.user){ %>
             <div class="create-comment">
-                <form action="/comments/create" class="new-comment-form-<%=post._id%>" data-post_id="<%=post._id%>" method="POST">
+                <form action="/comments/create" id="post-<%=post._id%>-comments-form" method="POST">
                     <textarea  name="content" placeholder="comment here" required></textarea>
                     <input type="hidden" name="post" value="<%=post._id%>" >
                     <input type="submit" value="Add Comment">

@@ -14,8 +14,9 @@ module.exports.create = async function(req,res){
                 post: post,
                 user: req.user._id
             });
-            comment = await Comment.findById(comment._id).populate('post').populate('user');
-            commentsMailer.newComment(comment);
+            post.comments.push(comment);
+            post.save();
+            comment = await comment.populate('user', 'name email').execPopulate();
             let job = queue.create('emails',comment).save(function(err){
                 if(err)
                 {
@@ -24,12 +25,8 @@ module.exports.create = async function(req,res){
                 }
                 console.log(job.id);
             })
-            
-            post.comments.push(comment);
-            post.save();//save after updating the database
             if(req.xhr){
                 console.log('xhr comment req')
-                req.flash('success','comment posted');
                 return res.status(200).json({
                     data: {
                         comment: comment
@@ -37,8 +34,13 @@ module.exports.create = async function(req,res){
                     message: 'Comment Created'
                 });
             }          
+            req.flash('success', 'Comment published!');
+            return res.redirect('back');
+        }else{
+            req.flash('error', 'Unauthorized');
+            return res.redirect('back');
         }
-        return res.redirect('back');
+      
         
     }catch(error){
         return;
@@ -50,25 +52,30 @@ module.exports.destroy = async function(req,res){
         let comment = await Comment.findById(req.params.id);
         if(comment.user == req.user.id){
             await Like.deleteMany({likeable: comment._id ,onModel: 'Comment'});
-            req.flash('success','comment deleted');
+            
             let postId = comment.post;
             comment.remove();
-            await Post.findByIdAndUpdate(postId,{$pull:{comments: req.params.id}});
+            let post = await Post.findByIdAndUpdate(postId,{$pull:{comments: req.params.id}});
             if(req.xhr){
                 console.log('comment deleted');
                 return res.status(200).json({
                     data: {
-                        post_id: postId,
                         comment_id: req.params.id
                     },
                     message: 'comment deleted'
                 });
                 
             }
+            req.flash('success','comment deleted');
+            return res.redirect('back');
+        }else{
+            req.flash('error', 'Unauthorized');
+            return res.redirect('back');
         }
-        return res.redirect('back');
+        
         
     }catch(error){
+        console.log({error});
         return ;
     }
     

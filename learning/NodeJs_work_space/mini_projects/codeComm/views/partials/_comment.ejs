@@ -6,14 +6,13 @@
             </h1>
             <div class="comment-likes-deleteComment">
                 <% if(locals.user) {%>
-                    <a href="/likes/toggle/?id=<%=comment._id%>&type=Comment" class = "toggle-like-button" data-likes=""<%=comment.likes.length%>>
+                    <a href="/likes/toggle/?id=<%=comment._id%>&type=Comment" class = "toggle-like-button" data-likes="<%= comment.likes.length%> ">
                         <div class="comment-likes">
                             <p><%=comment.likes.length%></p>
                             <i class="fa-regular fa-thumbs-up"></i>
                         </div>
                     </a>
-                <%}%>
-                <% else{%>
+                <%}else{%>
                     <div class="comment-likes">
                         <p><%=comment.likes.length%></p>
                         <i class="fa-regular fa-thumbs-up"></i>
