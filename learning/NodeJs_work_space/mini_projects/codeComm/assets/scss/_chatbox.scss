@@ -1,0 +1,48 @@
+#chatBox_wrapper{
+    position: fixed;
+    right: 0px; bottom: 0px;
+    width: 250px;
+    height:400px;
+    margin: 1%;
+    background-color:lightblue;
+    box-sizing: content-box;
+    z-index: 3;
+    color: black;
+    background-color: white;
+    .chat_Container{
+        overflow-y: scroll;
+        box-sizing: border-box;
+        padding: 5%;
+        height: 85%;
+        background-color: cornsilk;
+        .chat-message{
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 1%;
+            margin: 1%;
+        }
+        .user1-message{
+            background-color: #f59f43;
+            text-align: left;
+        }
+        .user2-message{
+            background-color: #e7841b;
+            text-align: right;
+        }
+    }
+    .chatbox_form{
+        height: 15%;
+        box-sizing: border-box;
+        background-color: red;
+        
+        input[type=text] {
+            height: 90%;
+            width: 80%;
+        }
+        button{
+            height: 90%;
+            width: 15%;
+            background-color: greenyellow;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="../css/_post.css">
-<link rel="stylesheet" href="../css/_comment.css">
+<link rel="stylesheet" href="/css/_post.css">
+<link rel="stylesheet" href="/css/_comment.css">
 <div id="home-container">
     <section id="feed-section">
         <h4 class="home-section-heading">
@@ -33,6 +33,7 @@
             <% } %>
         </ul>
     </section>
+    <%- include('partials/_chatBox'); %>
 </div>
 
 <script src="/js/home_post_comments.js"></script>
