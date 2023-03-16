@@ -43,7 +43,6 @@ module.exports.destroy = async function(req,res){
         {           
             await Like.deleteMany({likeable:post , onModel: 'Post'});
             await Like.deleteMany({_id : {$in: post.comments}});
-            req.flash('success','post deleted');
             post.remove();
             await Comment.deleteMany({post: req.params.id});
             if(req.xhr){
@@ -55,6 +54,7 @@ module.exports.destroy = async function(req,res){
                     message: 'post deleted'
                 });
             }
+            req.flash('success','post deleted');
         }        
         return res.redirect('back');
     }catch(error){

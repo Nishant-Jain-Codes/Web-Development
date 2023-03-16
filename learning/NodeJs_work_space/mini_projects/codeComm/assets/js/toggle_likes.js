@@ -10,11 +10,12 @@ class ToggleLike{
         $(this.toggler).click(function(e){
             e.preventDefault();
             let self = this;
-
+            console.log($(self).attr('href'));
             // this is a new way of writing ajax which you might've studied, it looks like the same as promises
             $.ajax({
                 type: 'POST',
                 url: $(self).attr('href'),
+                
             })
             .done(function(data) {
                 let likesCount = parseInt($(self).attr('data-likes'));
@@ -28,12 +29,11 @@ class ToggleLike{
 
 
                 $(self).attr('data-likes', likesCount);
-                console.log(self);
-                $(self).html(`${likesCount}`);
+                $(self).html(`${likesCount} Likes`);
 
             })
             .fail(function(errData) {
-                console.log('error in completing the request',errData);
+                console.log('error in completing the request');
             });
             
 
