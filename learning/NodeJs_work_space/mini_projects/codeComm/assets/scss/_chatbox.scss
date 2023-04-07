@@ -1,48 +1,75 @@
-#chatBox_wrapper{
-    position: fixed;
-    right: 0px; bottom: 0px;
-    width: 250px;
-    height:400px;
-    margin: 1%;
-    background-color:lightblue;
-    box-sizing: content-box;
-    z-index: 3;
-    color: black;
-    background-color: white;
-    .chat_Container{
-        overflow-y: scroll;
-        box-sizing: border-box;
-        padding: 5%;
-        height: 85%;
-        background-color: cornsilk;
-        .chat-message{
-            box-sizing: border-box;
-            border-radius: 20px;
-            padding: 1%;
-            margin: 1%;
-        }
-        .user1-message{
-            background-color: #f59f43;
-            text-align: left;
-        }
-        .user2-message{
-            background-color: #e7841b;
-            text-align: right;
-        }
+$chat-box-color: #c76f0a;
+$chat-box-background: #c9b3b3;
+$chat-box-border-radius: 5px;
+$chat-box-form-padding: 10px;
+
+.chat-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 275px;
+  height: 400px;
+  border: 1px solid $chat-box-color;
+  background-color: $chat-box-color;
+  overflow-y: hidden;
+  color: black;
+
+  .chat-messages {
+    height: calc(100% - 50px);
+    padding: $chat-box-form-padding;
+    overflow-y: scroll;
+    overflow-x: hidden; /* hide the horizontal scrollbar */
+
+    /* hide the scrollbar */
+    &::-webkit-scrollbar {
+      display: none;
     }
-    .chatbox_form{
-        height: 15%;
-        box-sizing: border-box;
-        background-color: red;
-        
-        input[type=text] {
-            height: 90%;
-            width: 80%;
-        }
-        button{
-            height: 90%;
-            width: 15%;
-            background-color: greenyellow;
-        }
+
+    /* hide the scrollbar thumb */
+    &::-webkit-scrollbar-thumb {
+      display: none;
     }
+
+    .message {
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: $chat-box-border-radius;
+      background-color: $chat-box-background;
+
+      &.received {
+        background-color: #e6e6ff;
+      }
+    }
+  }
+
+  .chat-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $chat-box-form-padding;
+    display: flex;
+
+    input[type="text"] {
+      flex-grow: 1;
+      width: 80%;
+      padding: 5px;
+      border: none;
+      border-radius: $chat-box-border-radius;
+      margin-right: 10px;
+    }
+
+    button[type="submit"] {
+      padding: 5px 10px;
+      border: none;
+      border-radius: $chat-box-border-radius;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #3e8e41;
+      }
+    }
+  }
 }
