@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/_chatbox.css">
+<% if(locals.user) { %>
 <div class="chat-box">
     <div class="chat-messages">
       <div class="message sent">Hi, how can I help you today?</div>
@@ -12,3 +13,4 @@
       <button type="submit">Send</button>
     </form>
   </div>
+<% } %>

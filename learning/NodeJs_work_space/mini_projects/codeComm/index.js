@@ -15,6 +15,8 @@ const port = 8000;
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleWare = require('./config/middleware');
+
+
 //middleware to convert scss to css
 app.use(sassMiddleware({
     src: './assets/scss',
