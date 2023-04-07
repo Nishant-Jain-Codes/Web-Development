@@ -12,10 +12,7 @@
     height: calc(100% - 50px);
     padding: 10px;
     overflow-y: scroll;
-    overflow-x: hidden;
-    /* hide the horizontal scrollbar */
-    /* hide the scrollbar */
-    /* hide the scrollbar thumb */ }
+    overflow-x: hidden; }
     .chat-box .chat-messages::-webkit-scrollbar {
       display: none; }
     .chat-box .chat-messages::-webkit-scrollbar-thumb {
@@ -25,8 +22,10 @@
       padding: 5px;
       border-radius: 5px;
       background-color: #c9b3b3; }
+      .chat-box .chat-messages .message.sent {
+        background-color: #a98686; }
       .chat-box .chat-messages .message.received {
-        background-color: #e6e6ff; }
+        background-color: #e9e0e0; }
   .chat-box .chat-form {
     position: absolute;
     bottom: 0;
