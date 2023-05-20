@@ -29,7 +29,7 @@
         <h4 class="home-section-heading">friends</h4>
         <ul id="friend-container">
             <% for(let friend of locals.all_users){ %>
-               <%- include('partials/_friend',{friend:friend}) %>
+                <%- include('partials/_friend',{friend:friend}) %>
             <% } %>
         </ul>
     </section>
@@ -45,7 +45,7 @@
         let toggleLike = new ToggleLike(self);
     });
 </script>
- <!-- establishing the front end for the chat box -->
+<!-- establishing the front end for the chat box -->
 <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 <script src="js/chat_engine.js"></script>
 <% if(locals.user){ %>

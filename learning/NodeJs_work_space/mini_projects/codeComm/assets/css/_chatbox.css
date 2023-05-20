@@ -1,9 +1,9 @@
 .chat-box {
   position: fixed;
   bottom: 0;
-  right: 0;
-  width: 275px;
-  height: 400px;
+  right: 2vw;
+  width: 28.5vw;
+  height: 40vh;
   border: 1px solid #c76f0a;
   background-color: #c76f0a;
   overflow-y: hidden;

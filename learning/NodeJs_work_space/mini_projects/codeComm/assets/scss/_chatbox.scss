@@ -6,9 +6,9 @@ $chat-box-form-padding: 10px;
 .chat-box {
   position: fixed;
   bottom: 0;
-  right: 0;
-  width: 275px;
-  height: 400px;
+  right: 2vw;
+  width: 28.5vw;
+  height: 40vh;
   border: 1px solid $chat-box-color;
   background-color: $chat-box-color;
   overflow-y: hidden;
