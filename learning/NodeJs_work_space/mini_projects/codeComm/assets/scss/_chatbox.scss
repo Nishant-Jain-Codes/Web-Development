@@ -36,10 +36,16 @@ $chat-box-form-padding: 10px;
 
       &.sent {
         background-color: darken($chat-box-background, 15%);
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 50px;
+        padding-left: 30px;
       }
 
       &.received {
         background-color: lighten($chat-box-background, 15%);
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 50px;
+        padding-right: 30px;
       }
     }
   }

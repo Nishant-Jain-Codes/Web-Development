@@ -23,9 +23,15 @@
       border-radius: 5px;
       background-color: #c9b3b3; }
       .chat-box .chat-messages .message.sent {
-        background-color: #a98686; }
+        background-color: #a98686;
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 50px;
+        padding-left: 30px; }
       .chat-box .chat-messages .message.received {
-        background-color: #e9e0e0; }
+        background-color: #e9e0e0;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 50px;
+        padding-right: 30px; }
   .chat-box .chat-form {
     position: absolute;
     bottom: 0;
