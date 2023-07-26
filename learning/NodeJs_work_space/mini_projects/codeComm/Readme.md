@@ -28,8 +28,4 @@ This project is a full-stack social media website that I developed as part of my
 
 The project was developed from December 2022 to March 2023.
 
-### GitHub Repository:
-
-You can find the source code and detailed implementation in the [GitHub repository](https://github.com/Nishant-Jain-Codes/Web-Development/tree/main/learning/NodeJs_work_space/mini_projects/codeComm).
-
 This project allowed me to gain hands-on experience in full-stack web development and work with various technologies commonly used in building dynamic web applications. The social media website offers a user-friendly interface and demonstrates my ability to deliver a seamless and engaging user experience.
